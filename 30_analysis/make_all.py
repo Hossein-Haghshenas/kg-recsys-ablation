@@ -344,7 +344,7 @@ E4_AXIS = (
     ("full", 1.00),
 )
 E4_MODELS = ("kgat", "kgin", "lightkg")
-E4_DATASETS = ("lastfm", "bookcrossing", "amazonbook")
+E4_DATASETS = ("lastfm", "bookcrossing", "amazonbook", "ml1m")
 
 
 def e4(grouped) -> list[dict[str, object]]:
@@ -666,7 +666,7 @@ def _try_figures(e1_rows, e2_rows, e3_rows, e4_rows, e6_rows) -> list[str]:
         if missing.exists():
             missing.unlink()
         colors = {"kgat": "#4C78A8", "kgin": "#F58518", "lightkg": "#54A24B"}
-        fig, axes = plt.subplots(1, 3, figsize=(12, 3.6), sharey=False)
+        fig, axes = plt.subplots(1, len(E4_DATASETS), figsize=(3.8 * len(E4_DATASETS), 3.6), sharey=False)
         for ax, dataset in zip(axes, E4_DATASETS):
             kappa = KAPPA.get(dataset, "")
             ax.set_title(f"{dataset}" + (f" (κ={kappa})" if kappa != "" else ""))

@@ -43,7 +43,7 @@ environment.yml      Python environment
   runs.csv           one row per run; the only input to the analysis
   hp_search/         every hyper-parameter trial (trial configs, trials.jsonl, best.json)
   hp_space.yaml      search space per model
-30_analysis/         make_all.py, stats.py, and the generated tables and figures
+30_analysis/         paper_statistics.py, make_all.py, stats.py, and generated tables/figures
 scripts/             hyper-parameter search and batch runner
 ```
 
@@ -121,42 +121,55 @@ python scripts/run_core_batch.py --queue remaining --limit 5 --until-empty
 **Collect and analyse:**
 
 ```bash
-python 20_results/collect.py       # rebuilds 20_results/runs.csv from every metrics.json
-python 30_analysis/make_all.py     # writes tables and figures to 30_analysis/
+python 20_results/collect.py            # rebuilds 20_results/runs.csv from every metrics.json
+python 30_analysis/paper_statistics.py  # reproduces Tables 16-20 and all statistical tests in the paper
+python 30_analysis/make_all.py          # writes exploratory tables and figures to 30_analysis/
 ```
 
 ## Results
 
-`20_results/runs.csv` holds all 321 finished runs across Last.FM, Book-Crossing, and MovieLens-1M (107 runs per dataset), one row per run: test Recall@10/20, NDCG@10/20, MRR@10, best and total epochs, training time, time per epoch, peak GPU memory, parameter count, best validation score and the configuration hash. Evaluation is full ranking over all items.
+`20_results/runs.csv` holds all 321 finished runs across Last.FM, Book-Crossing, and MovieLens-1M (107 runs per dataset: 80 core runs + 27 dose runs), one row per run: test Recall@10/20, NDCG@10/20, MRR@10, best and total epochs, training time, time per epoch, peak GPU memory, parameter count, best validation score and the configuration hash. Evaluation is full ranking over all items.
 
-`30_analysis/make_all.py` builds these from `runs.csv`:
+`30_analysis/paper_statistics.py` reproduces the manuscript's primary measurement tables:
+
+| file | content |
+|---|---|
+| `paper_cost.csv` | Table 16: capacity, memory and training cost |
+| `paper_cells.csv` | Table 17: cell means, standard deviations and CV flags |
+| `paper_contrasts.csv` | Table 18: all 45 contrasts (Welch test, 95% CI, Hedges's $g$, Holm correction over 45) |
+| `paper_contrasts_pooled_sensitivity.csv` | Table 18 footnote: sensitivity check pooling the stalled LightKG run |
+| `paper_dose.csv` | Table 19: dose-response trends across 9 series (exact Jonckheere–Terpstra $p$, Spearman $\rho$) |
+| `paper_nneg.csv` | Table 20: negative-sampling spread and winning $n_{\text{neg}}$ per cell |
+| `paper_rank.csv` | Section 8.1: exact Mann–Whitney $p$ and complete separation checks |
+| `paper_shuf_draws.csv` | Section 8.8: SHUF contrasts re-tested with graph permutation draw as the unit |
+
+In addition, `30_analysis/make_all.py` builds these exploratory summaries:
 
 | file | content |
 |---|---|
 | `e1_accuracy` | mean ± std of every metric per model × dataset × condition |
 | `e2_kg_effect` | paired `full` − `none` differences per seed |
 | `e3_full_shuf_none` | `full` / `shuf` / `none` side by side |
-| `e4_dose` | accuracy against the fraction of triples kept |
+| `e4_dose` | accuracy against the fraction of triples kept (Last.FM, Book-Crossing, MovieLens-1M) |
 | `e5_cost` | training cost under the equal 15-trial search budget |
 | `e6_seed_noise` | seed-to-seed variation per cell |
 
 Notes on the recorded runs:
 
-- **LightKG / Book-Crossing / `shuf`, seed 2** diverged (best epoch 4, test Recall@20 0.012). A re-run diverged in the same way; its record is kept in `10_models/lightkg/runs_collapsed/`. It is reported as a convergence failure, not dropped.
-- **MovieLens-1M** configurations, search trials, and all 107 seed runs are fully executed and included in `runs.csv`.
+- **LightKG / Book-Crossing / `shuf`, seed 2** stalled on its initial loss plateau (loss 47.49 at epoch 25, best validation epoch 4, patience 20) and terminated via early stopping without error. In the manuscript's primary analysis (Tables 17 and 18, Section 8.1), this stalled seed is excluded, yielding $n=4$ trained runs with Recall@20 = $0.0861 \pm 0.0021$. When all five seeds are pooled, Recall@20 = $0.0713 \pm 0.0332$ ($n=5$). Both versions are documented in `30_analysis/tables/e3_full_shuf_none.note.txt` and evaluated in `paper_contrasts_pooled_sensitivity.csv`.
+- **MovieLens-1M** configurations, 165 search trials (across 11 search cells), and all 107 seed runs are fully executed and included in `runs.csv`.
 - The `commit` column records the revision of the LightKG code used for a run. `8c8cc70` is the revision included in this repository.
 - File paths inside the logs and JSON records are relative to the repository root.
 
 ## Citation
 
-The paper is not yet published. Until it is, please cite:
-
 ```bibtex
-@misc{haghshenas2026kgpay,
-  title  = {When Does the Knowledge Graph Pay? A Controlled Re-Execution Study of Knowledge-Aware Recommendation},
-  author = {Haghshenas, Hossein and Zare Mehrjardi, Fatemeh and Ghaneai, Hossein and Sardari Zarchi, Mohsen},
-  year   = {2026},
-  note   = {Code: https://github.com/Hossein-Haghshenas/kg-recsys-ablation}
+@article{haghshenas2026kgpay,
+  title   = {When Does the Knowledge Graph Pay? A Controlled Re-Execution Study of Knowledge-Aware Recommendation},
+  author  = {Haghshenas, Hossein and Zare Mehrjardi, Fatemeh and Ghaneai, Hossein and Sardari Zarchi, Mohsen},
+  journal = {Journal of Computing and Security},
+  year    = {2026},
+  note    = {Repository: \url{https://github.com/Hossein-Haghshenas/kg-recsys-ablation}}
 }
 ```
 
@@ -169,5 +182,5 @@ The code and result files written for this study are released under the [MIT Lic
 Third-party code keeps its own terms:
 
 - `10_models/kgcl/code/official/` is © 2022 Yuhao, MIT License ([LICENSE](10_models/kgcl/code/official/LICENSE)).
-- `10_models/lightkg/code/official/` comes from [1371149/LightKG](https://github.com/1371149/LightKG), which does not state a licence. It is included here, with the changes listed in [`PATCHES.md`](10_models/lightkg/PATCHES.md), for research reproducibility only; all rights remain with its authors.
+- `10_models/lightkg/code/official/` comes from [1371149/LightKG](https://github.com/1371149/LightKG), which does not state a license. It is included here, with the changes listed in [`PATCHES.md`](10_models/lightkg/PATCHES.md), for research reproducibility only; all rights remain with its authors.
 - The datasets are not redistributed here; they are downloaded from the LightKG repository.
