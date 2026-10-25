@@ -44,6 +44,7 @@ environment.yml      Python environment
   hp_search/         every hyper-parameter trial (trial configs, trials.jsonl, best.json)
   hp_space.yaml      search space per model
 30_analysis/         paper_statistics.py, make_all.py, stats.py, and generated tables/figures
+40_literature_review/ OpenAlex queries, screening registers, Table 10 extraction, and figure scripts
 scripts/             hyper-parameter search and batch runner
 ```
 
