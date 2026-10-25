@@ -1,0 +1,16 @@
+model: lightgcn
+dataset: amazonbook
+embedding_size: 64
+n_layers: 3
+reg_weight: 1.0e-4
+require_pow: true
+learning_rate: 0.001
+train_batch_size: 2048
+stopping_step: 20
+metrics: [Recall, NDCG, MRR]
+topk: [10, 20]
+valid_metric: Recall@20
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 1
+benchmark_filename: [train, valid, test]

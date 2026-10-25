@@ -1,0 +1,35 @@
+{
+  "config_path": "20_results/hp_search/kgat__lastfm__full/trial_00.yaml",
+  "train_neg_sample_args": {
+    "distribution": "uniform",
+    "sample_num": 1,
+    "alpha": 1.0,
+    "dynamic": false,
+    "candidate_num": 0
+  },
+  "stopping_step": 20,
+  "metrics": [
+    "Recall",
+    "NDCG",
+    "MRR"
+  ],
+  "topk": [
+    10,
+    20
+  ],
+  "valid_metric": "Recall@20",
+  "eval_args": {
+    "split": {
+      "RS": [
+        0.8,
+        0.1,
+        0.1
+      ]
+    },
+    "group_by": "user",
+    "order": "RO",
+    "mode": "full"
+  },
+  "seed": 0,
+  "epochs": 1000
+}

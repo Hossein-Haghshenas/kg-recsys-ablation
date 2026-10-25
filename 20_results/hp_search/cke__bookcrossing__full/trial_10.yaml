@@ -1,0 +1,25 @@
+model: cke
+dataset: bookcrossing
+kg_file: full
+embedding_size: 64
+kg_embedding_size: 64
+reg_weights:
+- 0.014175195256665725
+- 0.0010612307367541954
+learning_rate: 0.0009519565298225655
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 10
+stopping_step: 20
+metrics:
+- Recall
+- NDCG
+- MRR
+topk:
+- 10
+- 20
+valid_metric: Recall@20
+benchmark_filename:
+- train
+- valid
+- test

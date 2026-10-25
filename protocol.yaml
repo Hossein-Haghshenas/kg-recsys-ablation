@@ -1,0 +1,64 @@
+# frozen experimental protocol
+# n_neg (negatives per positive) is a searched hyper-parameter, not a fixed value.
+
+split: random 80/10/10 per-user
+split_source: lightkg_benchmark_files
+evaluation: all-ranking
+metrics:
+  - recall@10
+  - recall@20
+  - ndcg@10
+  - ndcg@20
+  - mrr@10
+embedding_dim: 64
+optimizer: Adam
+negative_sampling:
+  strategy: uniform
+  n_neg: search
+early_stopping:
+  patience: 20
+  metric: recall@20
+  split: valid
+seeds_main: [0, 1, 2, 3, 4]
+seeds_aux: [0, 1, 2]
+hp_search:
+  method: bayesian
+  sampler: tpe
+  n_trials: 15
+  objective: valid_recall@20
+  trial_seed: 0
+  scope: per_model_dataset_condition
+  n_neg_values: [1, 2, 5, 10]
+  # SHUF/DOSE copy the winning FULL config; they are not searched separately
+
+datasets:
+  - lastfm
+  - bookcrossing
+  - ml1m
+
+deferred_datasets:
+  - amazonbook
+
+core_models:
+  - lightgcn
+  - kgat
+  - kgin
+  - kgcl
+  - lightkg
+
+extra_models:
+  - cke
+  - kgrec
+
+conditions:
+  main: [full, none, shuf]
+  dose: [dose25, dose50, dose75]
+  dose_models: [kgat, kgin, lightkg]
+
+constraints:
+  - lightgcn_hp_budget_equals_kgat
+  - tune_full_and_none_separately
+  - reuse_full_hp_for_shuf_and_dose
+  - log_time_params_memory
+  - report_e5_under_equal_search_budget
+  - missing_dataset_config_is_fatal

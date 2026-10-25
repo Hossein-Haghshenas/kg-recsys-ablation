@@ -1,0 +1,25 @@
+model: cke
+dataset: ml1m
+kg_file: full
+embedding_size: 64
+kg_embedding_size: 64
+reg_weights:
+- 0.00042328245586201223
+- 0.000304739361773639
+learning_rate: 1.5998881492631487e-05
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 10
+stopping_step: 20
+metrics:
+- Recall
+- NDCG
+- MRR
+topk:
+- 10
+- 20
+valid_metric: Recall@20
+benchmark_filename:
+- train
+- valid
+- test

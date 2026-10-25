@@ -1,0 +1,871 @@
+>>SEED: 0
+loading [../data/bookcrossing]
+18751 interactions for training
+3729 interactions for testing
+bookcrossing Sparsity : 0.00022526859020522948
+bookcrossing is ready to go
+===========config================
+PID: 36036
+KGCN:RGAT, TransR:True, N:10
+KGC: True @ d_prob:0.5 @ joint:True @ from_pretrain:False
+UIC: RANDOM @ d_prob:0.001 @ temp:0.2 @ reg:0.1
+{'A_n_fold': 100,
+ 'A_split': False,
+ 'bpr_batch_size': 2048,
+ 'decay': 0.0001,
+ 'dropout': 0,
+ 'keep_prob': 0.8,
+ 'latent_dim_rec': 64,
+ 'lightGCN_n_layers': 3,
+ 'lr': 0.001,
+ 'multicore': 0,
+ 'neg_k': 1,
+ 'pretrain': 0,
+ 'test_u_batch_size': 4096}
+cores for test: 2
+comment: lgn
+tensorboard: 0
+LOAD: 0
+Weight path: ./checkpoints
+Test Topks: [10, 20]
+using bpr loss
+===========end===================
+user:11017, item:9058, entity:77896
+use NORMAL distribution UI
+use NORMAL distribution ENTITY
+loading adjacency matrix
+successfully loaded...
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/dataloader.py:424: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:653.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+don't split the matrix
+KGCL is ready to go!
+load and save to ../code/checkpoints/kgc-bookcrossing-64.pth.tar
+not enable tensorflowboard
+[Trans]
+trans Loss: 0.711
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[1/1000] loss2.003 = 1.443+0.560-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00091006, 0.00066916]), 'recall': array([0.00883298, 0.01311563]), 'ndcg': array([0.00553119, 0.0066073 ]), 'mrr': array([0.00475766, 0.00504966])}
+[Trans]
+trans Loss: 0.695
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[2/1000] loss1.963 = 1.412+0.551-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.0011242 , 0.00082976]), 'recall': array([0.0109743 , 0.01605996]), 'ndcg': array([0.00688394, 0.00812737]), 'mrr': array([0.00585296, 0.00618132])}
+VALID_SCORE 0.0161
+find a better model
+[Trans]
+trans Loss: 0.693
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[3/1000] loss1.922 = 1.380+0.542-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00149893, 0.00109743]), 'recall': array([0.01445396, 0.02114561]), 'ndcg': array([0.00850561, 0.01017103]), 'mrr': array([0.00692108, 0.00737564])}
+VALID_SCORE 0.0211
+find a better model
+[Trans]
+trans Loss: 0.686
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[4/1000] loss1.883 = 1.351+0.533-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00203426, 0.0013651 ]), 'recall': array([0.01953961, 0.02609743]), 'ndcg': array([0.01096067, 0.01263905]), 'mrr': array([0.00862288, 0.00910303])}
+VALID_SCORE 0.0261
+find a better model
+[Trans]
+trans Loss: 0.680
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[5/1000] loss1.849 = 1.328+0.522-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00235546, 0.00157923]), 'recall': array([0.02192184, 0.02947002]), 'ndcg': array([0.01270415, 0.01460666]), 'mrr': array([0.0101764 , 0.01070982])}
+VALID_SCORE 0.0295
+find a better model
+[Trans]
+trans Loss: 0.674
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[6/1000] loss1.817 = 1.307+0.510-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00246253, 0.00195396]), 'recall': array([0.02299251, 0.03519807]), 'ndcg': array([0.01439278, 0.01759894]), 'mrr': array([0.01218602, 0.01312586])}
+VALID_SCORE 0.0352
+find a better model
+[Trans]
+trans Loss: 0.673
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[7/1000] loss1.781 = 1.283+0.498-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00305139, 0.00224839]), 'recall': array([0.02730193, 0.04041756]), 'ndcg': array([0.01664726, 0.02006217]), 'mrr': array([0.01399404, 0.01502622])}
+VALID_SCORE 0.0404
+find a better model
+[Trans]
+trans Loss: 0.664
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[8/1000] loss1.750 = 1.265+0.486-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00347966, 0.00256959]), 'recall': array([0.03118308, 0.04572284]), 'ndcg': array([0.01876584, 0.02258954]), 'mrr': array([0.01560471, 0.01680097])}
+VALID_SCORE 0.0457
+find a better model
+[Trans]
+trans Loss: 0.660
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[9/1000] loss1.720 = 1.249+0.472-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00401499, 0.00278373]), 'recall': array([0.03600107, 0.04858686]), 'ndcg': array([0.02110047, 0.02444107]), 'mrr': array([0.01725362, 0.01832611])}
+VALID_SCORE 0.0486
+find a better model
+[Trans]
+trans Loss: 0.653
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[10/1000] loss1.691 = 1.234+0.457-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00433619, 0.00297109]), 'recall': array([0.03845468, 0.05233418]), 'ndcg': array([0.02246611, 0.02607089]), 'mrr': array([0.01837166, 0.01944966])}
+VALID_SCORE 0.0523
+find a better model
+[Trans]
+trans Loss: 0.648
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[11/1000] loss1.662 = 1.220+0.442-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00471092, 0.00326552]), 'recall': array([0.04145253, 0.05795517]), 'ndcg': array([0.02425652, 0.02845272]), 'mrr': array([0.02013868, 0.02128712])}
+VALID_SCORE 0.0580
+find a better model
+[Trans]
+trans Loss: 0.643
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[12/1000] loss1.635 = 1.208+0.427-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00524625, 0.00334582]), 'recall': array([0.04680585, 0.05863875]), 'ndcg': array([0.02639144, 0.02944436]), 'mrr': array([0.0213931 , 0.02223679])}
+VALID_SCORE 0.0586
+find a better model
+[Trans]
+trans Loss: 0.639
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[13/1000] loss1.610 = 1.196+0.414-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00546039, 0.00350642]), 'recall': array([0.04867951, 0.06105585]), 'ndcg': array([0.02781711, 0.03099996]), 'mrr': array([0.02269807, 0.0235775 ])}
+VALID_SCORE 0.0611
+find a better model
+[Trans]
+trans Loss: 0.630
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[14/1000] loss1.584 = 1.187+0.396-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00562099, 0.00361349]), 'recall': array([0.05068701, 0.06279568]), 'ndcg': array([0.02838292, 0.03156552]), 'mrr': array([0.02286207, 0.02378975])}
+VALID_SCORE 0.0628
+find a better model
+[Trans]
+trans Loss: 0.628
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[15/1000] loss1.559 = 1.178+0.381-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00572805, 0.00366702]), 'recall': array([0.05149001, 0.0643605 ]), 'ndcg': array([0.0291885 , 0.03253234]), 'mrr': array([0.02375599, 0.02476211])}
+VALID_SCORE 0.0644
+find a better model
+[Trans]
+trans Loss: 0.622
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[16/1000] loss1.536 = 1.169+0.367-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00572805, 0.00385439]), 'recall': array([0.05149001, 0.06705338]), 'ndcg': array([0.02929837, 0.03334297]), 'mrr': array([0.02386008, 0.0250479 ])}
+VALID_SCORE 0.0671
+find a better model
+[Trans]
+trans Loss: 0.619
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[17/1000] loss1.514 = 1.162+0.352-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00588865, 0.00409529]), 'recall': array([0.05266774, 0.07090777]), 'ndcg': array([0.02987191, 0.03459948]), 'mrr': array([0.02437778, 0.02573362])}
+VALID_SCORE 0.0709
+find a better model
+[Trans]
+trans Loss: 0.605
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[18/1000] loss1.494 = 1.155+0.339-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00599572, 0.00422912]), 'recall': array([0.0537384 , 0.07358443]), 'ndcg': array([0.03024286, 0.035387  ]), 'mrr': array([0.0246104 , 0.02608567])}
+VALID_SCORE 0.0736
+find a better model
+[Trans]
+trans Loss: 0.603
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[19/1000] loss1.475 = 1.148+0.327-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00631692, 0.00433619]), 'recall': array([0.05695039, 0.07519853]), 'ndcg': array([0.03133313, 0.03610961]), 'mrr': array([0.02514637, 0.02653007])}
+VALID_SCORE 0.0752
+find a better model
+[Trans]
+trans Loss: 0.597
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[20/1000] loss1.455 = 1.142+0.313-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00647752, 0.00447002]), 'recall': array([0.05855639, 0.07787519]), 'ndcg': array([0.03191848, 0.03694424]), 'mrr': array([0.02549752, 0.02694577])}
+VALID_SCORE 0.0779
+find a better model
+[Trans]
+trans Loss: 0.594
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[21/1000] loss1.437 = 1.136+0.301-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00658458, 0.00457709]), 'recall': array([0.05962705, 0.07974886]), 'ndcg': array([0.03208825, 0.03732036]), 'mrr': array([0.02538769, 0.02690002])}
+VALID_SCORE 0.0797
+find a better model
+[Trans]
+trans Loss: 0.592
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[22/1000] loss1.417 = 1.129+0.288-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00658458, 0.00463062]), 'recall': array([0.05962705, 0.08081952]), 'ndcg': array([0.03239545, 0.0379003 ]), 'mrr': array([0.02578154, 0.02736604])}
+VALID_SCORE 0.0808
+find a better model
+[Trans]
+trans Loss: 0.588
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[23/1000] loss1.401 = 1.125+0.276-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00685225, 0.00465739]), 'recall': array([0.06182191, 0.08175635]), 'ndcg': array([0.03329674, 0.03838198]), 'mrr': array([0.02632325, 0.02770778])}
+VALID_SCORE 0.0818
+find a better model
+[Trans]
+trans Loss: 0.582
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[24/1000] loss1.387 = 1.121+0.266-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00695931, 0.00473769]), 'recall': array([0.06262491, 0.08293408]), 'ndcg': array([0.0334336 , 0.03859565]), 'mrr': array([0.0261926 , 0.02756798])}
+VALID_SCORE 0.0829
+find a better model
+[Trans]
+trans Loss: 0.570
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[25/1000] loss1.371 = 1.115+0.256-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00706638, 0.00473769]), 'recall': array([0.06268656, 0.08293408]), 'ndcg': array([0.03355513, 0.03869703]), 'mrr': array([0.02628713, 0.02764884])}
+VALID_SCORE 0.0829
+[Trans]
+trans Loss: 0.566
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[26/1000] loss1.357 = 1.111+0.246-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00701285, 0.00484475]), 'recall': array([0.06263302, 0.08467391]), 'ndcg': array([0.03361415, 0.03925929]), 'mrr': array([0.02640992, 0.02792038])}
+VALID_SCORE 0.0847
+find a better model
+[Trans]
+trans Loss: 0.563
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[27/1000] loss1.346 = 1.108+0.238-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00701285, 0.00487152]), 'recall': array([0.06263302, 0.08520924]), 'ndcg': array([0.03373502, 0.03954433]), 'mrr': array([0.02650764, 0.02807626])}
+VALID_SCORE 0.0852
+find a better model
+[Trans]
+trans Loss: 0.557
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[28/1000] loss1.332 = 1.103+0.229-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00717345, 0.00489829]), 'recall': array([0.0637118 , 0.08574457]), 'ndcg': array([0.03461926, 0.04026168]), 'mrr': array([0.02730915, 0.02883998])}
+VALID_SCORE 0.0857
+find a better model
+[Trans]
+trans Loss: 0.552
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[29/1000] loss1.317 = 1.099+0.219-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00738758, 0.00489829]), 'recall': array([0.06558546, 0.08574457]), 'ndcg': array([0.03539473, 0.04050781]), 'mrr': array([0.02783131, 0.0291741 ])}
+VALID_SCORE 0.0857
+[Trans]
+trans Loss: 0.548
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[30/1000] loss1.305 = 1.095+0.210-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00733405, 0.00489829]), 'recall': array([0.06505013, 0.08574457]), 'ndcg': array([0.03525066, 0.04055538]), 'mrr': array([0.02777714, 0.02920325])}
+VALID_SCORE 0.0857
+[Trans]
+trans Loss: 0.537
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[31/1000] loss1.295 = 1.093+0.202-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00722698, 0.00500535]), 'recall': array([0.06397946, 0.0878859 ]), 'ndcg': array([0.03529201, 0.04142718]), 'mrr': array([0.02818714, 0.02985274])}
+VALID_SCORE 0.0879
+find a better model
+[Trans]
+trans Loss: 0.540
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[32/1000] loss1.284 = 1.089+0.196-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00744111, 0.00505889]), 'recall': array([0.06559357, 0.08895656]), 'ndcg': array([0.03578097, 0.0417394 ]), 'mrr': array([0.02824216, 0.02986446])}
+VALID_SCORE 0.0890
+find a better model
+[Trans]
+trans Loss: 0.536
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[33/1000] loss1.273 = 1.087+0.186-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00744111, 0.00505889]), 'recall': array([0.06559357, 0.08895656]), 'ndcg': array([0.03617549, 0.04216071]), 'mrr': array([0.02898504, 0.03062895])}
+VALID_SCORE 0.0890
+[Trans]
+trans Loss: 0.527
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[34/1000] loss1.266 = 1.085+0.181-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00728051, 0.00513919]), 'recall': array([0.06425524, 0.09016106]), 'ndcg': array([0.0359538 , 0.04262746]), 'mrr': array([0.02907447, 0.03094907])}
+VALID_SCORE 0.0902
+find a better model
+[Trans]
+trans Loss: 0.530
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[35/1000] loss1.254 = 1.082+0.172-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00733405, 0.00513919]), 'recall': array([0.06479057, 0.09016106]), 'ndcg': array([0.03629717, 0.04281901]), 'mrr': array([0.02937634, 0.03120392])}
+VALID_SCORE 0.0902
+[Trans]
+trans Loss: 0.522
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[36/1000] loss1.246 = 1.079+0.167-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00728051, 0.00516595]), 'recall': array([0.06425524, 0.09069639]), 'ndcg': array([0.0361928 , 0.04300687]), 'mrr': array([0.0293689 , 0.03129565])}
+VALID_SCORE 0.0907
+find a better model
+[Trans]
+trans Loss: 0.519
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[37/1000] loss1.237 = 1.077+0.161-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00728051, 0.00516595]), 'recall': array([0.06425524, 0.09069639]), 'ndcg': array([0.03651618, 0.04335235]), 'mrr': array([0.02983328, 0.03177771])}
+VALID_SCORE 0.0907
+[Trans]
+trans Loss: 0.514
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[38/1000] loss1.229 = 1.074+0.155-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00728051, 0.00519272]), 'recall': array([0.06425524, 0.09123173]), 'ndcg': array([0.03659491, 0.04356768]), 'mrr': array([0.02997009, 0.03195607])}
+VALID_SCORE 0.0912
+find a better model
+[Trans]
+trans Loss: 0.508
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[39/1000] loss1.221 = 1.072+0.149-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00733405, 0.00527302]), 'recall': array([0.06479057, 0.09283772]), 'ndcg': array([0.03700808, 0.04422914]), 'mrr': array([0.03035226, 0.03240174])}
+VALID_SCORE 0.0928
+find a better model
+[Trans]
+trans Loss: 0.506
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[40/1000] loss1.214 = 1.071+0.144-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00744111, 0.00535332]), 'recall': array([0.06545974, 0.09368533]), 'ndcg': array([0.03761653, 0.04487823]), 'mrr': array([0.03119859, 0.03322947])}
+VALID_SCORE 0.0937
+find a better model
+[Trans]
+trans Loss: 0.503
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[41/1000] loss1.206 = 1.067+0.139-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00754818, 0.00538009]), 'recall': array([0.0665304 , 0.09422066]), 'ndcg': array([0.03806327, 0.045159  ]), 'mrr': array([0.03147667, 0.03344355])}
+VALID_SCORE 0.0942
+find a better model
+[Trans]
+trans Loss: 0.497
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[42/1000] loss1.200 = 1.066+0.134-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00749465, 0.00535332]), 'recall': array([0.06599507, 0.09368533]), 'ndcg': array([0.03821998, 0.04534661]), 'mrr': array([0.03182612, 0.0338214 ])}
+VALID_SCORE 0.0937
+[Trans]
+trans Loss: 0.493
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[43/1000] loss1.194 = 1.064+0.130-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00749465, 0.00535332]), 'recall': array([0.06599507, 0.09368533]), 'ndcg': array([0.03791765, 0.04507909]), 'mrr': array([0.03143248, 0.03345558])}
+VALID_SCORE 0.0937
+[Trans]
+trans Loss: 0.494
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[44/1000] loss1.188 = 1.062+0.126-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00760171, 0.00532655]), 'recall': array([0.06706573, 0.09364415]), 'ndcg': array([0.03810897, 0.04492938]), 'mrr': array([0.03139743, 0.03327584])}
+VALID_SCORE 0.0936
+[Trans]
+trans Loss: 0.485
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[45/1000] loss1.181 = 1.060+0.121-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00754818, 0.00532655]), 'recall': array([0.0665304 , 0.09364415]), 'ndcg': array([0.03802521, 0.04501483]), 'mrr': array([0.03143907, 0.03338361])}
+VALID_SCORE 0.0936
+[Trans]
+trans Loss: 0.485
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[46/1000] loss1.173 = 1.057+0.116-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00749465, 0.00532655]), 'recall': array([0.06599507, 0.09364415]), 'ndcg': array([0.03779397, 0.04495152]), 'mrr': array([0.03129036, 0.0332973 ])}
+VALID_SCORE 0.0936
+[Trans]
+trans Loss: 0.481
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[47/1000] loss1.169 = 1.056+0.113-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00749465, 0.00535332]), 'recall': array([0.06599507, 0.09417948]), 'ndcg': array([0.03777323, 0.0450353 ]), 'mrr': array([0.03126827, 0.03328802])}
+VALID_SCORE 0.0942
+[Trans]
+trans Loss: 0.478
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[48/1000] loss1.165 = 1.055+0.110-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00760171, 0.00532655]), 'recall': array([0.06706573, 0.09364415]), 'ndcg': array([0.03822924, 0.04508676]), 'mrr': array([0.03152022, 0.03342447])}
+VALID_SCORE 0.0936
+[Trans]
+trans Loss: 0.478
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[49/1000] loss1.159 = 1.053+0.106-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00754818, 0.00535332]), 'recall': array([0.0665304 , 0.09417948]), 'ndcg': array([0.03818246, 0.04531425]), 'mrr': array([0.03177747, 0.03375774])}
+VALID_SCORE 0.0942
+[Trans]
+trans Loss: 0.474
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[50/1000] loss1.154 = 1.051+0.103-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00754818, 0.00532655]), 'recall': array([0.0665304 , 0.09364415]), 'ndcg': array([0.03813749, 0.04513393]), 'mrr': array([0.03175092, 0.03369376])}
+VALID_SCORE 0.0936
+[Trans]
+trans Loss: 0.471
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[51/1000] loss1.149 = 1.050+0.099-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00754818, 0.00529979]), 'recall': array([0.0665304 , 0.09310882]), 'ndcg': array([0.03817635, 0.04506232]), 'mrr': array([0.03185352, 0.0337829 ])}
+VALID_SCORE 0.0931
+[Trans]
+trans Loss: 0.465
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[52/1000] loss1.145 = 1.048+0.098-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00754818, 0.00532655]), 'recall': array([0.0665304 , 0.09364415]), 'ndcg': array([0.03798188, 0.0449989 ]), 'mrr': array([0.03157609, 0.03353594])}
+VALID_SCORE 0.0936
+[Trans]
+trans Loss: 0.463
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[53/1000] loss1.140 = 1.046+0.094-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00760171, 0.00535332]), 'recall': array([0.06706573, 0.09417948]), 'ndcg': array([0.03819115, 0.04519468]), 'mrr': array([0.03170057, 0.0336512 ])}
+VALID_SCORE 0.0942
+[Trans]
+trans Loss: 0.459
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[54/1000] loss1.136 = 1.045+0.091-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00770878, 0.00535332]), 'recall': array([0.0681364 , 0.09368533]), 'ndcg': array([0.03869106, 0.04530529]), 'mrr': array([0.03203728, 0.03390026])}
+VALID_SCORE 0.0937
+[Trans]
+trans Loss: 0.455
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[55/1000] loss1.132 = 1.044+0.088-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00786938, 0.00535332]), 'recall': array([0.06947473, 0.09368533]), 'ndcg': array([0.03913467, 0.04535753]), 'mrr': array([0.03217196, 0.03388283])}
+VALID_SCORE 0.0937
+[Trans]
+trans Loss: 0.456
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[56/1000] loss1.128 = 1.042+0.086-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00786938, 0.00538009]), 'recall': array([0.06947473, 0.09369344]), 'ndcg': array([0.03895824, 0.04517521]), 'mrr': array([0.03192575, 0.03361894])}
+VALID_SCORE 0.0937
+[Trans]
+trans Loss: 0.450
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[57/1000] loss1.124 = 1.041+0.083-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00786938, 0.00538009]), 'recall': array([0.06947473, 0.09369344]), 'ndcg': array([0.03908576, 0.04527266]), 'mrr': array([0.03238099, 0.03406667])}
+VALID_SCORE 0.0937
+[Trans]
+trans Loss: 0.452
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[58/1000] loss1.121 = 1.040+0.082-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00786938, 0.00538009]), 'recall': array([0.06947473, 0.09369344]), 'ndcg': array([0.03909326, 0.04526204]), 'mrr': array([0.03239374, 0.03406657])}
+VALID_SCORE 0.0937
+[Trans]
+trans Loss: 0.443
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[59/1000] loss1.117 = 1.038+0.080-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00781585, 0.00538009]), 'recall': array([0.06893939, 0.09369344]), 'ndcg': array([0.03900714, 0.04534099]), 'mrr': array([0.03245853, 0.03419094])}
+VALID_SCORE 0.0937
+[Trans]
+trans Loss: 0.444
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[60/1000] loss1.114 = 1.037+0.077-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00792291, 0.00535332]), 'recall': array([0.07001006, 0.09315811]), 'ndcg': array([0.0393511 , 0.04526904]), 'mrr': array([0.03261106, 0.03422548])}
+VALID_SCORE 0.0932
+[Trans]
+trans Loss: 0.446
+[Drop]
+/teamspace/studios/this_studio/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+[Joint Learning]
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/utils/data/dataloader.py:627: UserWarning: This DataLoader will create 12 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+EPOCH[61/1000] loss1.110 = 1.035+0.075-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 186
+{'precision': array([0.00792291, 0.00535332]), 'recall': array([0.06960856, 0.09289044]), 'ndcg': array([0.03899466, 0.04494752]), 'mrr': array([0.03220552, 0.0338349 ])}
+VALID_SCORE 0.0929
+early stop triggerd at epoch 60
+BEST_VALID 0.094221

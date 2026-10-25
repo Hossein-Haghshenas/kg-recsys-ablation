@@ -1,0 +1,24 @@
+model: lightgcn
+dataset: ml1m
+kg_file: full
+embedding_size: 64
+n_layers: 2
+reg_weight: 0.00038294004074653355
+require_pow: true
+learning_rate: 0.0006899180438665712
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 2
+stopping_step: 20
+metrics:
+- Recall
+- NDCG
+- MRR
+topk:
+- 10
+- 20
+valid_metric: Recall@20
+benchmark_filename:
+- train
+- valid
+- test

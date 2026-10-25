@@ -1,0 +1,28 @@
+model: lightkg
+dataset: bookcrossing
+kg_file: none
+embedding_size: 64
+layer: 3
+node_dropout_rate: 0.1
+mess_dropout_rate: 0.1
+weight_decay: 2.9420578065975902e-05
+cos_loss: 1
+user_loss: 1.0e-08
+item_loss: 1.0e-07
+learning_rate: 0.0006622061805876723
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 5
+stopping_step: 20
+metrics:
+- Recall
+- NDCG
+- MRR
+topk:
+- 10
+- 20
+valid_metric: Recall@20
+benchmark_filename:
+- train
+- valid
+- test

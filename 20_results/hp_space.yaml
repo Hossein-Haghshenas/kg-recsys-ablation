@@ -1,0 +1,46 @@
+# frozen hp search spaces — 15 TPE trials, identical budget per cell
+# embedding_dim stays 64. n_neg is searched; it is not a frozen protocol constant.
+
+n_neg_values: [1, 2, 5, 10]
+trial_seed: 0
+n_trials: 15
+objective: valid_recall@20
+
+lightgcn:
+  n_neg: categorical
+  n_layers: [2, 3, 4]
+  learning_rate: loguniform [1.0e-4, 1.0e-3]
+  reg_weight: loguniform [1.0e-5, 1.0e-3]
+
+kgat:
+  n_neg: categorical
+  learning_rate: loguniform [1.0e-5, 1.0e-3]
+  mess_dropout: [0.0, 0.1]
+  reg_weight: loguniform [1.0e-6, 1.0e-4]
+
+kgin:
+  n_neg: categorical
+  n_factors: [4, 8]
+  learning_rate: loguniform [1.0e-5, 1.0e-3]
+  node_dropout_rate: [0.0, 0.5]
+  mess_dropout_rate: [0.0, 0.1]
+
+lightkg:
+  n_neg: categorical
+  layer: [2, 3]
+  learning_rate: loguniform [1.0e-4, 1.0e-3]
+  node_dropout_rate: [0.0, 0.1]
+  mess_dropout_rate: [0.0, 0.1]
+  weight_decay: loguniform [1.0e-5, 1.0e-4]
+
+kgcl:
+  n_neg: categorical
+  learning_rate: loguniform [1.0e-4, 1.0e-3]
+  decay: loguniform [1.0e-5, 1.0e-3]
+  layer: [2, 3]
+
+cke:
+  n_neg: categorical
+  learning_rate: loguniform [1.0e-5, 1.0e-3]
+  reg_weight_rec: loguniform [1.0e-4, 1.0e-1]
+  reg_weight_kg: loguniform [1.0e-4, 1.0e-1]

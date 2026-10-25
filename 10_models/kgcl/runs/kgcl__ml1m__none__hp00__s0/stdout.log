@@ -1,0 +1,375 @@
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/dataloader.py:424: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:654.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+>>SEED: 0
+loading [../data/ml1m]
+464239 interactions for training
+54700 interactions for testing
+ml1m Sparsity : 0.024569900445643382
+ml1m is ready to go
+===========config================
+PID: 404
+KGCN:NO, TransR:False, N:10
+KGC: False @ d_prob:0.5 @ joint:False @ from_pretrain:False
+UIC: RANDOM @ d_prob:0.001 @ temp:0.2 @ reg:0.1
+{'A_n_fold': 100,
+ 'A_split': False,
+ 'bpr_batch_size': 2048,
+ 'decay': 0.0001,
+ 'dropout': 0,
+ 'keep_prob': 0.8,
+ 'latent_dim_rec': 64,
+ 'lightGCN_n_layers': 3,
+ 'lr': 0.001,
+ 'multicore': 0,
+ 'neg_k': 1,
+ 'pretrain': 0,
+ 'test_u_batch_size': 4096}
+cores for test: 8
+comment: lgn
+tensorboard: 0
+LOAD: 0
+Weight path: ./checkpoints
+Test Topks: [10, 20]
+using bpr loss
+===========end===================
+user:6038, item:3498, entity:3500
+use NORMAL distribution UI
+use NORMAL distribution ENTITY
+loading adjacency matrix
+successfully loaded...
+don't split the matrix
+KGCL is ready to go!
+load and save to ../code/checkpoints/sgl-ml1m-64.pth.tar
+not enable tensorflowboard
+[Drop]
+[Joint Learning]
+EPOCH[1/1000] loss1.409 = 0.716+0.693-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.01206297, 0.00985087]), 'recall': array([0.03166804, 0.0470805 ]), 'ndcg': array([0.02410659, 0.02900923]), 'mrr': array([0.04134164, 0.04571748])}
+[Drop]
+[Joint Learning]
+EPOCH[2/1000] loss1.401 = 0.710+0.692-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.01695112, 0.01400994]), 'recall': array([0.03308361, 0.0502264 ]), 'ndcg': array([0.02927918, 0.03461912]), 'mrr': array([0.06003406, 0.06543448])}
+VALID_SCORE 0.0502
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[3/1000] loss1.399 = 0.709+0.690-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.02294946, 0.01910522]), 'recall': array([0.03126673, 0.05011877]), 'ndcg': array([0.03366695, 0.03904301]), 'mrr': array([0.07593811, 0.08202262])}
+VALID_SCORE 0.0501
+[Drop]
+[Joint Learning]
+EPOCH[4/1000] loss1.397 = 0.709+0.689-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.03007457, 0.02454847]), 'recall': array([0.03311079, 0.05206699]), 'ndcg': array([0.0403442 , 0.04498884]), 'mrr': array([0.09451007, 0.10079915])}
+VALID_SCORE 0.0521
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[5/1000] loss1.395 = 0.709+0.686-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.03731566, 0.03037283]), 'recall': array([0.03813547, 0.05957907]), 'ndcg': array([0.04904132, 0.05391121]), 'mrr': array([0.11599841, 0.12228128])}
+VALID_SCORE 0.0596
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[6/1000] loss1.391 = 0.710+0.681-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.04452361, 0.03639602]), 'recall': array([0.04406851, 0.0687849 ]), 'ndcg': array([0.05794968, 0.06360669]), 'mrr': array([0.13411659, 0.14047126])}
+VALID_SCORE 0.0688
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[7/1000] loss1.385 = 0.711+0.674-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.05212925, 0.04290804]), 'recall': array([0.05162407, 0.08173362]), 'ndcg': array([0.06808581, 0.07520657]), 'mrr': array([0.15392085, 0.16089481])}
+VALID_SCORE 0.0817
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[8/1000] loss1.375 = 0.713+0.662-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.06164043, 0.05089478]), 'recall': array([0.06455706, 0.10076605]), 'ndcg': array([0.08139986, 0.09051095]), 'mrr': array([0.17530056, 0.18270143])}
+VALID_SCORE 0.1008
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[9/1000] loss1.359 = 0.718+0.641-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.07224524, 0.0587821 ]), 'recall': array([0.08061226, 0.1246969 ]), 'ndcg': array([0.09685271, 0.10796042]), 'mrr': array([0.19882655, 0.20622231])}
+VALID_SCORE 0.1247
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[10/1000] loss1.333 = 0.726+0.607-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.08349627, 0.06738194]), 'recall': array([0.10151873, 0.15482044]), 'ndcg': array([0.11559981, 0.1293531 ]), 'mrr': array([0.22574986, 0.23330321])}
+VALID_SCORE 0.1548
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[11/1000] loss1.297 = 0.740+0.556-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.09269263, 0.0742005 ]), 'recall': array([0.12030328, 0.18167386]), 'ndcg': array([0.13277734, 0.14862508]), 'mrr': array([0.25167436, 0.25902989])}
+VALID_SCORE 0.1817
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[12/1000] loss1.252 = 0.757+0.494-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.0990058 , 0.07906379]), 'recall': array([0.13330415, 0.20282959]), 'ndcg': array([0.14419501, 0.16242093]), 'mrr': array([0.26638175, 0.27371179])}
+VALID_SCORE 0.2028
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[13/1000] loss1.204 = 0.771+0.433-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10271748, 0.08207125]), 'recall': array([0.14257915, 0.21826116]), 'ndcg': array([0.15115413, 0.17121853]), 'mrr': array([0.27520824, 0.28320081])}
+VALID_SCORE 0.2183
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[14/1000] loss1.163 = 0.779+0.384-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10553438, 0.08417564]), 'recall': array([0.1510766 , 0.22971302]), 'ndcg': array([0.15705268, 0.17799394]), 'mrr': array([0.28269328, 0.29063168])}
+VALID_SCORE 0.2297
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[15/1000] loss1.127 = 0.781+0.345-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10692626, 0.08541839]), 'recall': array([0.15531417, 0.2372561 ]), 'ndcg': array([0.16035868, 0.18241308]), 'mrr': array([0.287017  , 0.29519304])}
+VALID_SCORE 0.2373
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[16/1000] loss1.098 = 0.782+0.317-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10816901, 0.08613919]), 'recall': array([0.15897829, 0.24117173]), 'ndcg': array([0.16307108, 0.18511169]), 'mrr': array([0.29030615, 0.29848251])}
+VALID_SCORE 0.2412
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[17/1000] loss1.074 = 0.781+0.294-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10846727, 0.0864623 ]), 'recall': array([0.1618404 , 0.24405631]), 'ndcg': array([0.16498681, 0.18711505]), 'mrr': array([0.29279856, 0.30084481])}
+VALID_SCORE 0.2441
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[18/1000] loss1.054 = 0.779+0.274-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10863297, 0.08713339]), 'recall': array([0.16350902, 0.24771007]), 'ndcg': array([0.16576382, 0.18873563]), 'mrr': array([0.29334379, 0.30158687])}
+VALID_SCORE 0.2477
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[19/1000] loss1.036 = 0.777+0.259-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10908036, 0.08706711]), 'recall': array([0.16505207, 0.24840782]), 'ndcg': array([0.16659733, 0.18915216]), 'mrr': array([0.29390783, 0.30233878])}
+VALID_SCORE 0.2484
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[20/1000] loss1.021 = 0.775+0.246-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10868268, 0.08723281]), 'recall': array([0.16474197, 0.24968284]), 'ndcg': array([0.16627337, 0.18954647]), 'mrr': array([0.29348128, 0.30211474])}
+VALID_SCORE 0.2497
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[21/1000] loss1.007 = 0.773+0.234-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10873239, 0.08720795]), 'recall': array([0.1660061 , 0.25002279]), 'ndcg': array([0.16663562, 0.18974303]), 'mrr': array([0.29377172, 0.30232482])}
+VALID_SCORE 0.2500
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[22/1000] loss0.997 = 0.771+0.226-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.1081193 , 0.08700911]), 'recall': array([0.16587462, 0.24982192]), 'ndcg': array([0.1665178 , 0.18977877]), 'mrr': array([0.29495154, 0.30354387])}
+VALID_SCORE 0.2498
+[Drop]
+[Joint Learning]
+EPOCH[23/1000] loss0.987 = 0.769+0.218-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10758906, 0.08694283]), 'recall': array([0.16450648, 0.25134858]), 'ndcg': array([0.16607241, 0.19021921]), 'mrr': array([0.2947431 , 0.30378962])}
+VALID_SCORE 0.2513
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[24/1000] loss0.977 = 0.767+0.210-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10757249, 0.08689312]), 'recall': array([0.1642018 , 0.25249901]), 'ndcg': array([0.16568613, 0.19012032]), 'mrr': array([0.29397042, 0.30324216])}
+VALID_SCORE 0.2525
+find a better model
+[Drop]
+[Joint Learning]
+EPOCH[25/1000] loss0.969 = 0.765+0.204-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.1072908 , 0.08665286]), 'recall': array([0.16449965, 0.251839  ]), 'ndcg': array([0.16536601, 0.1895997 ]), 'mrr': array([0.2932808 , 0.30238575])}
+VALID_SCORE 0.2518
+[Drop]
+[Joint Learning]
+EPOCH[26/1000] loss0.961 = 0.763+0.197-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10717481, 0.08645402]), 'recall': array([0.16403448, 0.25161227]), 'ndcg': array([0.16465242, 0.18883897]), 'mrr': array([0.29110618, 0.30027604])}
+VALID_SCORE 0.2516
+[Drop]
+[Joint Learning]
+EPOCH[27/1000] loss0.953 = 0.762+0.191-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10682684, 0.08614747]), 'recall': array([0.16431449, 0.24978375]), 'ndcg': array([0.1643478 , 0.18802773]), 'mrr': array([0.29111834, 0.29994437])}
+VALID_SCORE 0.2498
+[Drop]
+[Joint Learning]
+EPOCH[28/1000] loss0.947 = 0.760+0.187-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10594863, 0.08590721]), 'recall': array([0.16270726, 0.24933587]), 'ndcg': array([0.16338818, 0.18761571]), 'mrr': array([0.29007654, 0.29901781])}
+VALID_SCORE 0.2493
+[Drop]
+[Joint Learning]
+EPOCH[29/1000] loss0.942 = 0.759+0.183-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10553438, 0.08571665]), 'recall': array([0.16177768, 0.24935932]), 'ndcg': array([0.1627464, 0.1872203]), 'mrr': array([0.29030267, 0.29928509])}
+VALID_SCORE 0.2494
+[Drop]
+[Joint Learning]
+EPOCH[30/1000] loss0.936 = 0.757+0.179-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.1053024 , 0.08521955]), 'recall': array([0.16145302, 0.24781877]), 'ndcg': array([0.16215106, 0.18612899]), 'mrr': array([0.28981832, 0.29893945])}
+VALID_SCORE 0.2478
+[Drop]
+[Joint Learning]
+EPOCH[31/1000] loss0.931 = 0.756+0.175-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10503728, 0.08496272]), 'recall': array([0.16053591, 0.24686536]), 'ndcg': array([0.16141492, 0.18530171]), 'mrr': array([0.28880689, 0.2979956 ])}
+VALID_SCORE 0.2469
+[Drop]
+[Joint Learning]
+EPOCH[32/1000] loss0.925 = 0.755+0.171-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10465617, 0.08482187]), 'recall': array([0.16046144, 0.24659056]), 'ndcg': array([0.16103403, 0.18493155]), 'mrr': array([0.28796268, 0.29716082])}
+VALID_SCORE 0.2466
+[Drop]
+[Joint Learning]
+EPOCH[33/1000] loss0.922 = 0.754+0.168-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10425849, 0.08438277]), 'recall': array([0.15942166, 0.24599741]), 'ndcg': array([0.16004201, 0.18398665]), 'mrr': array([0.28573164, 0.29502994])}
+VALID_SCORE 0.2460
+[Drop]
+[Joint Learning]
+EPOCH[34/1000] loss0.917 = 0.752+0.165-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10405965, 0.0839768 ]), 'recall': array([0.15881268, 0.24508555]), 'ndcg': array([0.15941304, 0.18314143]), 'mrr': array([0.28457063, 0.29384868])}
+VALID_SCORE 0.2451
+[Drop]
+[Joint Learning]
+EPOCH[35/1000] loss0.914 = 0.751+0.162-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10372825, 0.08351284]), 'recall': array([0.15864741, 0.24404937]), 'ndcg': array([0.15902771, 0.18238675]), 'mrr': array([0.28444609, 0.29358204])}
+VALID_SCORE 0.2440
+[Drop]
+[Joint Learning]
+EPOCH[36/1000] loss0.910 = 0.750+0.159-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10339685, 0.08357912]), 'recall': array([0.15762357, 0.24300419]), 'ndcg': array([0.15824017, 0.18175477]), 'mrr': array([0.28345991, 0.29244672])}
+VALID_SCORE 0.2430
+[Drop]
+[Joint Learning]
+EPOCH[37/1000] loss0.905 = 0.749+0.156-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10308202, 0.08316487]), 'recall': array([0.15751965, 0.24154815]), 'ndcg': array([0.15784197, 0.1809392 ]), 'mrr': array([0.28244664, 0.29151972])}
+VALID_SCORE 0.2415
+[Drop]
+[Joint Learning]
+EPOCH[38/1000] loss0.903 = 0.748+0.154-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10263463, 0.08276719]), 'recall': array([0.1568435 , 0.23967045]), 'ndcg': array([0.15714634, 0.17993854]), 'mrr': array([0.28132093, 0.29039668])}
+VALID_SCORE 0.2397
+[Drop]
+[Joint Learning]
+EPOCH[39/1000] loss0.898 = 0.747+0.151-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10245236, 0.08238608]), 'recall': array([0.15612869, 0.23874719]), 'ndcg': array([0.15642038, 0.17899958]), 'mrr': array([0.28050762, 0.28954558])}
+VALID_SCORE 0.2387
+[Drop]
+[Joint Learning]
+EPOCH[40/1000] loss0.896 = 0.747+0.149-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10203811, 0.08236123]), 'recall': array([0.15449949, 0.23842864]), 'ndcg': array([0.15562796, 0.17862525]), 'mrr': array([0.27990032, 0.28909342])}
+VALID_SCORE 0.2384
+[Drop]
+[Joint Learning]
+EPOCH[41/1000] loss0.893 = 0.746+0.147-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10218724, 0.08198012]), 'recall': array([0.15504721, 0.23724567]), 'ndcg': array([0.15575629, 0.17808041]), 'mrr': array([0.27956208, 0.28854207])}
+VALID_SCORE 0.2372
+[Drop]
+[Joint Learning]
+EPOCH[42/1000] loss0.891 = 0.745+0.145-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10162386, 0.08152444]), 'recall': array([0.15346972, 0.23504628]), 'ndcg': array([0.154457  , 0.17663488]), 'mrr': array([0.27742027, 0.28647333])}
+VALID_SCORE 0.2350
+[Drop]
+[Joint Learning]
+EPOCH[43/1000] loss0.887 = 0.744+0.143-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.1009942 , 0.08120133]), 'recall': array([0.15192595, 0.23450578]), 'ndcg': array([0.15319172, 0.17562784]), 'mrr': array([0.27576143, 0.28495431])}
+VALID_SCORE 0.2345
+[Drop]
+[Joint Learning]
+EPOCH[44/1000] loss0.886 = 0.744+0.142-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10053024, 0.08073737]), 'recall': array([0.15125225, 0.23234384]), 'ndcg': array([0.15234068, 0.17441276]), 'mrr': array([0.27382241, 0.28302488])}
+VALID_SCORE 0.2323
+early stop triggerd at epoch 43
+BEST_VALID 0.252499

@@ -1,0 +1,24 @@
+model: lightgcn
+dataset: lastfm
+kg_file: full
+embedding_size: 64
+n_layers: 2
+reg_weight: 2.9624361268057146e-05
+require_pow: true
+learning_rate: 0.0004464880126425658
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 5
+stopping_step: 20
+metrics:
+- Recall
+- NDCG
+- MRR
+topk:
+- 10
+- 20
+valid_metric: Recall@20
+benchmark_filename:
+- train
+- valid
+- test

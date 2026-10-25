@@ -1,0 +1,29 @@
+model: kgat
+dataset: bookcrossing
+kg_file: full
+embedding_size: 64
+kg_embedding_size: 64
+layers:
+- 64
+- 32
+- 16
+aggregator_type: bi
+mess_dropout: 0.1
+reg_weight: 5.6070137616219205e-05
+learning_rate: 1.8956896677195954e-05
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 10
+stopping_step: 20
+metrics:
+- Recall
+- NDCG
+- MRR
+topk:
+- 10
+- 20
+valid_metric: Recall@20
+benchmark_filename:
+- train
+- valid
+- test

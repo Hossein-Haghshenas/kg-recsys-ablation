@@ -1,0 +1,1229 @@
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/dataloader.py:424: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at /pytorch/torch/csrc/utils/tensor_new.cpp:654.)
+  return torch.sparse.FloatTensor(index, data, torch.Size(coo.shape))
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+>>SEED: 1
+loading [../data/ml1m]
+464239 interactions for training
+54700 interactions for testing
+ml1m Sparsity : 0.024569900445643382
+ml1m is ready to go
+===========config================
+PID: 390
+KGCN:RGAT, TransR:True, N:10
+KGC: True @ d_prob:0.5 @ joint:True @ from_pretrain:False
+UIC: RANDOM @ d_prob:0.001 @ temp:0.2 @ reg:0.1
+{'A_n_fold': 100,
+ 'A_split': False,
+ 'bpr_batch_size': 2048,
+ 'decay': 0.0007098936257405903,
+ 'dropout': 0,
+ 'keep_prob': 0.8,
+ 'latent_dim_rec': 64,
+ 'lightGCN_n_layers': 3,
+ 'lr': 0.0003698661282102883,
+ 'multicore': 0,
+ 'neg_k': 1,
+ 'pretrain': 0,
+ 'test_u_batch_size': 4096}
+cores for test: 8
+comment: lgn
+tensorboard: 0
+LOAD: 0
+Weight path: ./checkpoints
+Test Topks: [10, 20]
+using bpr loss
+===========end===================
+user:6038, item:3498, entity:77799
+use NORMAL distribution UI
+use NORMAL distribution ENTITY
+loading adjacency matrix
+successfully loaded...
+don't split the matrix
+KGCL is ready to go!
+load and save to ../code/checkpoints/kgc-ml1m-64.pth.tar
+not enable tensorflowboard
+[Trans]
+trans Loss: 0.711
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[1/1000] loss1.750 = 1.059+0.691-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.0411599 , 0.03292461]), 'recall': array([0.07027077, 0.10765037]), 'ndcg': array([0.06472737, 0.07633161]), 'mrr': array([0.12729514, 0.13474832])}
+[Trans]
+trans Loss: 0.708
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[2/1000] loss1.682 = 0.996+0.686-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.06046396, 0.04760563]), 'recall': array([0.10895247, 0.16560587]), 'ndcg': array([0.10006891, 0.11734321]), 'mrr': array([0.18779606, 0.19647241])}
+VALID_SCORE 0.1656
+find a better model
+[Trans]
+trans Loss: 0.705
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[3/1000] loss1.634 = 0.952+0.682-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.06916321, 0.05424192]), 'recall': array([0.12748707, 0.18906488]), 'ndcg': array([0.11570446, 0.13450251]), 'mrr': array([0.21114655, 0.22042532])}
+VALID_SCORE 0.1891
+find a better model
+[Trans]
+trans Loss: 0.699
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[4/1000] loss1.597 = 0.920+0.677-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.0743662, 0.0584507]), 'recall': array([0.13722768, 0.20294423]), 'ndcg': array([0.12494449, 0.14489819]), 'mrr': array([0.22590254, 0.23517197])}
+VALID_SCORE 0.2029
+find a better model
+[Trans]
+trans Loss: 0.704
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[5/1000] loss1.568 = 0.895+0.673-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.07759735, 0.06119304]), 'recall': array([0.14260331, 0.211089  ]), 'ndcg': array([0.12992594, 0.1505496 ]), 'mrr': array([0.23297695, 0.24232917])}
+VALID_SCORE 0.2111
+find a better model
+[Trans]
+trans Loss: 0.695
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[6/1000] loss1.543 = 0.874+0.669-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.08011599, 0.0628169 ]), 'recall': array([0.14665647, 0.21686933]), 'ndcg': array([0.13329264, 0.15414531]), 'mrr': array([0.23771413, 0.24734211])}
+VALID_SCORE 0.2169
+find a better model
+[Trans]
+trans Loss: 0.692
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[7/1000] loss1.522 = 0.857+0.666-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.08144159, 0.06393538]), 'recall': array([0.14707658, 0.22024541]), 'ndcg': array([0.13501081, 0.15651063]), 'mrr': array([0.24127786, 0.25116685])}
+VALID_SCORE 0.2202
+find a better model
+[Trans]
+trans Loss: 0.696
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[8/1000] loss1.504 = 0.842+0.663-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.08220381, 0.06454847]), 'recall': array([0.14913536, 0.22109827]), 'ndcg': array([0.13624457, 0.15731681]), 'mrr': array([0.24356591, 0.25286746])}
+VALID_SCORE 0.2211
+find a better model
+[Trans]
+trans Loss: 0.694
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[9/1000] loss1.489 = 0.829+0.659-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.08222038, 0.0648633 ]), 'recall': array([0.14922741, 0.2217054 ]), 'ndcg': array([0.13657919, 0.15799591]), 'mrr': array([0.24436547, 0.25373253])}
+VALID_SCORE 0.2217
+find a better model
+[Trans]
+trans Loss: 0.692
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[10/1000] loss1.475 = 0.819+0.657-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.08256835, 0.06571665]), 'recall': array([0.14928851, 0.22369209]), 'ndcg': array([0.13765774, 0.15976174]), 'mrr': array([0.24784156, 0.25737535])}
+VALID_SCORE 0.2237
+find a better model
+[Trans]
+trans Loss: 0.695
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[11/1000] loss1.464 = 0.810+0.654-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.08359569, 0.06669428]), 'recall': array([0.14980601, 0.22525954]), 'ndcg': array([0.13870994, 0.1611373 ]), 'mrr': array([0.25027452, 0.25962189])}
+VALID_SCORE 0.2253
+find a better model
+[Trans]
+trans Loss: 0.694
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[12/1000] loss1.454 = 0.803+0.651-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.08482187, 0.06756421]), 'recall': array([0.15013385, 0.22679663]), 'ndcg': array([0.14050258, 0.16294085]), 'mrr': array([0.2545989 , 0.26399482])}
+VALID_SCORE 0.2268
+find a better model
+[Trans]
+trans Loss: 0.694
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[13/1000] loss1.444 = 0.796+0.648-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.0862966 , 0.06848384]), 'recall': array([0.1513358 , 0.22716607]), 'ndcg': array([0.14215571, 0.16408822]), 'mrr': array([0.25692916, 0.26609996])}
+VALID_SCORE 0.2272
+find a better model
+[Trans]
+trans Loss: 0.687
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[14/1000] loss1.435 = 0.791+0.644-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.0874565 , 0.06932891]), 'recall': array([0.15165105, 0.2285574 ]), 'ndcg': array([0.14331491, 0.16530416]), 'mrr': array([0.2595703 , 0.26848474])}
+VALID_SCORE 0.2286
+find a better model
+[Trans]
+trans Loss: 0.680
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[15/1000] loss1.427 = 0.787+0.640-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.08906379, 0.0703314 ]), 'recall': array([0.1522657 , 0.22886667]), 'ndcg': array([0.14451957, 0.16615483]), 'mrr': array([0.25975382, 0.26879892])}
+VALID_SCORE 0.2289
+find a better model
+[Trans]
+trans Loss: 0.685
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[16/1000] loss1.419 = 0.785+0.634-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.09103563, 0.07172328]), 'recall': array([0.15446274, 0.2297828 ]), 'ndcg': array([0.14626315, 0.16746361]), 'mrr': array([0.26145093, 0.26999544])}
+VALID_SCORE 0.2298
+find a better model
+[Trans]
+trans Loss: 0.684
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[17/1000] loss1.411 = 0.783+0.627-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.09269263, 0.07299089]), 'recall': array([0.15616176, 0.23138908]), 'ndcg': array([0.14795453, 0.16902044]), 'mrr': array([0.2622478 , 0.27090868])}
+VALID_SCORE 0.2314
+find a better model
+[Trans]
+trans Loss: 0.682
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[18/1000] loss1.404 = 0.785+0.619-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.09459818, 0.07490472]), 'recall': array([0.15763276, 0.23422318]), 'ndcg': array([0.15093694, 0.17236796]), 'mrr': array([0.26861088, 0.2771639 ])}
+VALID_SCORE 0.2342
+find a better model
+[Trans]
+trans Loss: 0.684
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[19/1000] loss1.393 = 0.787+0.607-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.09640431, 0.07655344]), 'recall': array([0.15844465, 0.2368266 ]), 'ndcg': array([0.15277694, 0.17454457]), 'mrr': array([0.27104864, 0.27964956])}
+VALID_SCORE 0.2368
+find a better model
+[Trans]
+trans Loss: 0.676
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[20/1000] loss1.383 = 0.792+0.591-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.09927092, 0.07816901]), 'recall': array([0.16125915, 0.2398528 ]), 'ndcg': array([0.15619296, 0.17753643]), 'mrr': array([0.27576985, 0.28416036])}
+VALID_SCORE 0.2399
+find a better model
+[Trans]
+trans Loss: 0.670
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[21/1000] loss1.371 = 0.800+0.571-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10230323, 0.08079536]), 'recall': array([0.16383318, 0.24427749]), 'ndcg': array([0.16011251, 0.18190042]), 'mrr': array([0.28190154, 0.29034527])}
+VALID_SCORE 0.2443
+find a better model
+[Trans]
+trans Loss: 0.671
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[22/1000] loss1.357 = 0.810+0.547-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10521955, 0.08290804]), 'recall': array([0.16643842, 0.24932264]), 'ndcg': array([0.16440575, 0.18657215]), 'mrr': array([0.2886671 , 0.29718989])}
+VALID_SCORE 0.2493
+find a better model
+[Trans]
+trans Loss: 0.658
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[23/1000] loss1.338 = 0.821+0.518-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10782104, 0.08489644]), 'recall': array([0.16975497, 0.25285792]), 'ndcg': array([0.16863048, 0.19066783]), 'mrr': array([0.29521383, 0.30343665])}
+VALID_SCORE 0.2529
+find a better model
+[Trans]
+trans Loss: 0.663
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[24/1000] loss1.319 = 0.834+0.485-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.10908036, 0.08642088]), 'recall': array([0.17163378, 0.25564324]), 'ndcg': array([0.17079584, 0.19340235]), 'mrr': array([0.29926809, 0.30744019])}
+VALID_SCORE 0.2556
+find a better model
+[Trans]
+trans Loss: 0.649
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[25/1000] loss1.300 = 0.847+0.453-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11037283, 0.0872908 ]), 'recall': array([0.17451856, 0.25796784]), 'ndcg': array([0.17292474, 0.19534212]), 'mrr': array([0.30149229, 0.30941836])}
+VALID_SCORE 0.2580
+find a better model
+[Trans]
+trans Loss: 0.646
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[26/1000] loss1.277 = 0.857+0.420-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11159901, 0.08830986]), 'recall': array([0.17590726, 0.26076085]), 'ndcg': array([0.17483913, 0.19755359]), 'mrr': array([0.30446983, 0.31259234])}
+VALID_SCORE 0.2608
+find a better model
+[Trans]
+trans Loss: 0.652
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[27/1000] loss1.258 = 0.866+0.393-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11262635, 0.08875725]), 'recall': array([0.1780086 , 0.26239062]), 'ndcg': array([0.17691255, 0.19926351]), 'mrr': array([0.3081604 , 0.31623865])}
+VALID_SCORE 0.2624
+find a better model
+[Trans]
+trans Loss: 0.651
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[28/1000] loss1.239 = 0.871+0.367-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.1135377 , 0.08898923]), 'recall': array([0.17870851, 0.26391536]), 'ndcg': array([0.177975  , 0.20027933]), 'mrr': array([0.3093591 , 0.31773762])}
+VALID_SCORE 0.2639
+find a better model
+[Trans]
+trans Loss: 0.645
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[29/1000] loss1.225 = 0.878+0.347-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11433306, 0.08952775]), 'recall': array([0.18063055, 0.26603207]), 'ndcg': array([0.17925208, 0.20156618]), 'mrr': array([0.3102519 , 0.31837865])}
+VALID_SCORE 0.2660
+find a better model
+[Trans]
+trans Loss: 0.641
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[30/1000] loss1.212 = 0.882+0.330-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11466446, 0.09003314]), 'recall': array([0.18114631, 0.26737548]), 'ndcg': array([0.17981768, 0.20244921]), 'mrr': array([0.3112346 , 0.31954164])}
+VALID_SCORE 0.2674
+find a better model
+[Trans]
+trans Loss: 0.646
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[31/1000] loss1.195 = 0.881+0.314-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11524441, 0.09046396]), 'recall': array([0.18289218, 0.26817198]), 'ndcg': array([0.18124464, 0.20370737]), 'mrr': array([0.31328717, 0.32140857])}
+VALID_SCORE 0.2682
+find a better model
+[Trans]
+trans Loss: 0.655
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[32/1000] loss1.186 = 0.884+0.302-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11560895, 0.09090307]), 'recall': array([0.18340599, 0.26993448]), 'ndcg': array([0.18208596, 0.20497152]), 'mrr': array([0.31437113, 0.32260932])}
+VALID_SCORE 0.2699
+find a better model
+[Trans]
+trans Loss: 0.658
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[33/1000] loss1.177 = 0.886+0.291-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11592378, 0.09101077]), 'recall': array([0.1841665, 0.2704871]), 'ndcg': array([0.18271407, 0.20546919]), 'mrr': array([0.31510067, 0.32337003])}
+VALID_SCORE 0.2705
+find a better model
+[Trans]
+trans Loss: 0.661
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[34/1000] loss1.167 = 0.885+0.281-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11605634, 0.09146645]), 'recall': array([0.18483719, 0.27215211]), 'ndcg': array([0.18314667, 0.2063263 ]), 'mrr': array([0.31583383, 0.32402765])}
+VALID_SCORE 0.2722
+find a better model
+[Trans]
+trans Loss: 0.658
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[35/1000] loss1.157 = 0.883+0.274-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11620547, 0.09152444]), 'recall': array([0.18517207, 0.27242528]), 'ndcg': array([0.18353757, 0.20670838]), 'mrr': array([0.31562414, 0.32386155])}
+VALID_SCORE 0.2724
+find a better model
+[Trans]
+trans Loss: 0.670
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[36/1000] loss1.152 = 0.885+0.267-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11650373, 0.09162386]), 'recall': array([0.1861805, 0.2730377]), 'ndcg': array([0.18404265, 0.2071039 ]), 'mrr': array([0.31610006, 0.32440348])}
+VALID_SCORE 0.2730
+find a better model
+[Trans]
+trans Loss: 0.672
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[37/1000] loss1.146 = 0.886+0.261-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11683513, 0.09191384]), 'recall': array([0.18630635, 0.2743211 ]), 'ndcg': array([0.18450747, 0.2078405 ]), 'mrr': array([0.31688977, 0.32530179])}
+VALID_SCORE 0.2743
+find a better model
+[Trans]
+trans Loss: 0.685
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[38/1000] loss1.141 = 0.885+0.256-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.1170174 , 0.09213753]), 'recall': array([0.18644798, 0.27514393]), 'ndcg': array([0.18490598, 0.20847234]), 'mrr': array([0.31730632, 0.32569275])}
+VALID_SCORE 0.2751
+find a better model
+[Trans]
+trans Loss: 0.672
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[39/1000] loss1.130 = 0.881+0.249-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11724938, 0.0923778 ]), 'recall': array([0.18683489, 0.27621835]), 'ndcg': array([0.18560385, 0.20933131]), 'mrr': array([0.31886883, 0.32728424])}
+VALID_SCORE 0.2762
+find a better model
+[Trans]
+trans Loss: 0.687
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[40/1000] loss1.127 = 0.883+0.244-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11754764, 0.09258492]), 'recall': array([0.18779407, 0.2763139 ]), 'ndcg': array([0.18590215, 0.20943468]), 'mrr': array([0.3188812 , 0.32719865])}
+VALID_SCORE 0.2763
+find a better model
+[Trans]
+trans Loss: 0.724
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[41/1000] loss1.119 = 0.879+0.240-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11777962, 0.09265949]), 'recall': array([0.18816007, 0.27763465]), 'ndcg': array([0.18635792, 0.21004805]), 'mrr': array([0.31948732, 0.32785872])}
+VALID_SCORE 0.2776
+find a better model
+[Trans]
+trans Loss: 0.727
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[42/1000] loss1.119 = 0.883+0.236-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11754764, 0.09289975]), 'recall': array([0.18794279, 0.27848171]), 'ndcg': array([0.18625838, 0.21047983]), 'mrr': array([0.31969017, 0.32819456])}
+VALID_SCORE 0.2785
+find a better model
+[Trans]
+trans Loss: 0.744
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[43/1000] loss1.115 = 0.882+0.233-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11772991, 0.09308202]), 'recall': array([0.18805845, 0.27942761]), 'ndcg': array([0.18630202, 0.21072487]), 'mrr': array([0.31919307, 0.32758693])}
+VALID_SCORE 0.2794
+find a better model
+[Trans]
+trans Loss: 0.748
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[44/1000] loss1.110 = 0.878+0.232-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11789561, 0.09327258]), 'recall': array([0.18857281, 0.27956991]), 'ndcg': array([0.18657212, 0.21097675]), 'mrr': array([0.31969451, 0.32806768])}
+VALID_SCORE 0.2796
+find a better model
+[Trans]
+trans Loss: 0.760
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[45/1000] loss1.106 = 0.879+0.227-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11812759, 0.09328086]), 'recall': array([0.18890549, 0.27980818]), 'ndcg': array([0.18662131, 0.21094   ]), 'mrr': array([0.31938573, 0.32780725])}
+VALID_SCORE 0.2798
+find a better model
+[Trans]
+trans Loss: 0.756
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[46/1000] loss1.102 = 0.878+0.224-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11835957, 0.0934797 ]), 'recall': array([0.189638  , 0.28065403]), 'ndcg': array([0.18690609, 0.21123882]), 'mrr': array([0.31956175, 0.32794152])}
+VALID_SCORE 0.2807
+find a better model
+[Trans]
+trans Loss: 0.785
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[47/1000] loss1.098 = 0.877+0.221-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11821044, 0.09333057]), 'recall': array([0.18981766, 0.28009224]), 'ndcg': array([0.18711939, 0.21129541]), 'mrr': array([0.32024835, 0.328519  ])}
+VALID_SCORE 0.2801
+[Trans]
+trans Loss: 0.772
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[48/1000] loss1.094 = 0.876+0.218-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11839271, 0.09342999]), 'recall': array([0.1900417 , 0.28031514]), 'ndcg': array([0.18728731, 0.2114215 ]), 'mrr': array([0.32051097, 0.32895427])}
+VALID_SCORE 0.2803
+[Trans]
+trans Loss: 0.760
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[49/1000] loss1.092 = 0.876+0.216-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11845899, 0.09338028]), 'recall': array([0.1902819 , 0.27995435]), 'ndcg': array([0.18734073, 0.21131922]), 'mrr': array([0.3202164 , 0.32852218])}
+VALID_SCORE 0.2800
+[Trans]
+trans Loss: 0.803
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[50/1000] loss1.087 = 0.874+0.213-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11860812, 0.09349627]), 'recall': array([0.19011584, 0.28093792]), 'ndcg': array([0.187503  , 0.21175027]), 'mrr': array([0.32112229, 0.32946003])}
+VALID_SCORE 0.2809
+find a better model
+[Trans]
+trans Loss: 0.795
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[51/1000] loss1.083 = 0.872+0.211-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11903894, 0.09362055]), 'recall': array([0.19046552, 0.28133507]), 'ndcg': array([0.18795252, 0.2120851 ]), 'mrr': array([0.32147302, 0.3298098 ])}
+VALID_SCORE 0.2813
+find a better model
+[Trans]
+trans Loss: 0.854
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[52/1000] loss1.081 = 0.872+0.209-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11903894, 0.09368683]), 'recall': array([0.19071479, 0.28136738]), 'ndcg': array([0.18822337, 0.21235086]), 'mrr': array([0.32207546, 0.33052345])}
+VALID_SCORE 0.2814
+find a better model
+[Trans]
+trans Loss: 0.851
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[53/1000] loss1.079 = 0.872+0.207-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11902237, 0.09376968]), 'recall': array([0.1910972 , 0.28154011]), 'ndcg': array([0.18824704, 0.21242812]), 'mrr': array([0.32204995, 0.33038596])}
+VALID_SCORE 0.2815
+find a better model
+[Trans]
+trans Loss: 0.856
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[54/1000] loss1.078 = 0.872+0.206-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11910522, 0.09367854]), 'recall': array([0.19168422, 0.281445  ]), 'ndcg': array([0.18835404, 0.21231335]), 'mrr': array([0.32171223, 0.33005069])}
+VALID_SCORE 0.2814
+[Trans]
+trans Loss: 0.908
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[55/1000] loss1.076 = 0.872+0.204-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11902237, 0.09366197]), 'recall': array([0.19144838, 0.28242852]), 'ndcg': array([0.18828854, 0.21253317]), 'mrr': array([0.32151589, 0.33002498])}
+VALID_SCORE 0.2824
+find a better model
+[Trans]
+trans Loss: 0.882
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[56/1000] loss1.074 = 0.871+0.203-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11887324, 0.09354598]), 'recall': array([0.19069803, 0.28210167]), 'ndcg': array([0.18811532, 0.2124503 ]), 'mrr': array([0.32257946, 0.33117698])}
+VALID_SCORE 0.2821
+[Trans]
+trans Loss: 0.897
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[57/1000] loss1.069 = 0.869+0.200-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11942005, 0.09359569]), 'recall': array([0.1922159 , 0.28250062]), 'ndcg': array([0.18885443, 0.2127249 ]), 'mrr': array([0.32309096, 0.33136889])}
+VALID_SCORE 0.2825
+find a better model
+[Trans]
+trans Loss: 0.890
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[58/1000] loss1.069 = 0.870+0.199-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11943662, 0.09354598]), 'recall': array([0.19262244, 0.2821889 ]), 'ndcg': array([0.18891918, 0.21259594]), 'mrr': array([0.32263628, 0.33084078])}
+VALID_SCORE 0.2822
+[Trans]
+trans Loss: 0.881
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[59/1000] loss1.067 = 0.868+0.198-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11948633, 0.09362055]), 'recall': array([0.19245719, 0.28262211]), 'ndcg': array([0.1888871, 0.2127512]), 'mrr': array([0.32235228, 0.33058333])}
+VALID_SCORE 0.2826
+find a better model
+[Trans]
+trans Loss: 0.974
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[60/1000] loss1.065 = 0.868+0.197-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11951947, 0.09342999]), 'recall': array([0.1926109 , 0.28186045]), 'ndcg': array([0.18899396, 0.21252521]), 'mrr': array([0.32225411, 0.33064572])}
+VALID_SCORE 0.2819
+[Trans]
+trans Loss: 0.965
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[61/1000] loss1.063 = 0.868+0.195-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11946976, 0.09367026]), 'recall': array([0.19236523, 0.28241467]), 'ndcg': array([0.18902681, 0.21286748]), 'mrr': array([0.32250654, 0.33101882])}
+VALID_SCORE 0.2824
+[Trans]
+trans Loss: 0.965
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[62/1000] loss1.057 = 0.863+0.193-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11990058, 0.09365369]), 'recall': array([0.19322098, 0.28238215]), 'ndcg': array([0.18961718, 0.21301515]), 'mrr': array([0.32307051, 0.33142928])}
+VALID_SCORE 0.2824
+[Trans]
+trans Loss: 0.978
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[63/1000] loss1.056 = 0.865+0.191-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11973488, 0.09368683]), 'recall': array([0.19342439, 0.28266722]), 'ndcg': array([0.1894401 , 0.21297796]), 'mrr': array([0.32280059, 0.33109543])}
+VALID_SCORE 0.2827
+find a better model
+[Trans]
+trans Loss: 1.024
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[64/1000] loss1.056 = 0.864+0.192-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11985087, 0.09356255]), 'recall': array([0.19296609, 0.28247818]), 'ndcg': array([0.18923353, 0.21271517]), 'mrr': array([0.32240469, 0.33078154])}
+VALID_SCORE 0.2825
+[Trans]
+trans Loss: 0.995
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[65/1000] loss1.054 = 0.864+0.190-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11981773, 0.09363712]), 'recall': array([0.19271572, 0.28274497]), 'ndcg': array([0.189104  , 0.21278539]), 'mrr': array([0.32224701, 0.33054669])}
+VALID_SCORE 0.2827
+find a better model
+[Trans]
+trans Loss: 0.946
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[66/1000] loss1.054 = 0.865+0.189-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11968517, 0.09355427]), 'recall': array([0.19211477, 0.28246217]), 'ndcg': array([0.18888822, 0.21269008]), 'mrr': array([0.3219813 , 0.33039138])}
+VALID_SCORE 0.2825
+[Trans]
+trans Loss: 1.017
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[67/1000] loss1.051 = 0.864+0.188-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11986744, 0.09355427]), 'recall': array([0.1920295 , 0.28237291]), 'ndcg': array([0.18900843, 0.21270878]), 'mrr': array([0.32203022, 0.33035039])}
+VALID_SCORE 0.2824
+[Trans]
+trans Loss: 1.020
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[68/1000] loss1.049 = 0.862+0.186-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.12      , 0.09358741]), 'recall': array([0.19222159, 0.28228477]), 'ndcg': array([0.18910533, 0.21266911]), 'mrr': array([0.32214154, 0.33051368])}
+VALID_SCORE 0.2823
+[Trans]
+trans Loss: 1.052
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[69/1000] loss1.046 = 0.861+0.185-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11998343, 0.09365369]), 'recall': array([0.1923622 , 0.28295054]), 'ndcg': array([0.18906109, 0.21281578]), 'mrr': array([0.32160663, 0.3300119 ])}
+VALID_SCORE 0.2830
+find a better model
+[Trans]
+trans Loss: 1.024
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[70/1000] loss1.045 = 0.860+0.185-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11975145, 0.09363712]), 'recall': array([0.19175295, 0.28279755]), 'ndcg': array([0.18892188, 0.21292566]), 'mrr': array([0.32215811, 0.33060284])}
+VALID_SCORE 0.2828
+[Trans]
+trans Loss: 1.101
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[71/1000] loss1.044 = 0.861+0.183-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11948633, 0.09341342]), 'recall': array([0.19184858, 0.28243165]), 'ndcg': array([0.18872818, 0.21263128]), 'mrr': array([0.32198051, 0.3305263 ])}
+VALID_SCORE 0.2824
+[Trans]
+trans Loss: 1.076
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[72/1000] loss1.041 = 0.859+0.183-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11970174, 0.09368683]), 'recall': array([0.19166787, 0.2826778 ]), 'ndcg': array([0.18861436, 0.2126806 ]), 'mrr': array([0.32113886, 0.32968648])}
+VALID_SCORE 0.2827
+[Trans]
+trans Loss: 1.172
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[73/1000] loss1.043 = 0.860+0.182-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11975145, 0.09373654]), 'recall': array([0.19257935, 0.28346657]), 'ndcg': array([0.18889482, 0.21287628]), 'mrr': array([0.3217751, 0.3301948])}
+VALID_SCORE 0.2835
+find a better model
+[Trans]
+trans Loss: 1.151
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[74/1000] loss1.038 = 0.857+0.181-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.1198343 , 0.09384424]), 'recall': array([0.19236581, 0.28361229]), 'ndcg': array([0.18900506, 0.21312369]), 'mrr': array([0.32170592, 0.33015466])}
+VALID_SCORE 0.2836
+find a better model
+[Trans]
+trans Loss: 1.114
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[75/1000] loss1.038 = 0.858+0.180-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11956918, 0.09392709]), 'recall': array([0.19254652, 0.28449602]), 'ndcg': array([0.18907699, 0.213465  ]), 'mrr': array([0.32236392, 0.33082708])}
+VALID_SCORE 0.2845
+find a better model
+[Trans]
+trans Loss: 1.146
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[76/1000] loss1.036 = 0.856+0.180-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11958575, 0.09398509]), 'recall': array([0.19222293, 0.28479999]), 'ndcg': array([0.18906288, 0.21361397]), 'mrr': array([0.32274773, 0.33128291])}
+VALID_SCORE 0.2848
+find a better model
+[Trans]
+trans Loss: 1.195
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[77/1000] loss1.037 = 0.857+0.180-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11968517, 0.09390224]), 'recall': array([0.19259964, 0.28489456]), 'ndcg': array([0.1891067, 0.2135084]), 'mrr': array([0.32249425, 0.33098999])}
+VALID_SCORE 0.2849
+find a better model
+[Trans]
+trans Loss: 1.164
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[78/1000] loss1.033 = 0.855+0.177-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11945319, 0.09398509]), 'recall': array([0.19171646, 0.28516595]), 'ndcg': array([0.18863375, 0.21345302]), 'mrr': array([0.32262878, 0.33121411])}
+VALID_SCORE 0.2852
+find a better model
+[Trans]
+trans Loss: 1.201
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[79/1000] loss1.031 = 0.855+0.176-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.1196686 , 0.09406794]), 'recall': array([0.19194723, 0.28542866]), 'ndcg': array([0.18871534, 0.21345116]), 'mrr': array([0.32242481, 0.33092108])}
+VALID_SCORE 0.2854
+find a better model
+[Trans]
+trans Loss: 1.217
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[80/1000] loss1.032 = 0.855+0.177-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11976802, 0.09401823]), 'recall': array([0.19207625, 0.2853387 ]), 'ndcg': array([0.188687  , 0.21332557]), 'mrr': array([0.32164977, 0.33023738])}
+VALID_SCORE 0.2853
+[Trans]
+trans Loss: 1.147
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[81/1000] loss1.029 = 0.854+0.175-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11996686, 0.09408451]), 'recall': array([0.19235214, 0.28493808]), 'ndcg': array([0.18867092, 0.21311338]), 'mrr': array([0.32134763, 0.32972127])}
+VALID_SCORE 0.2849
+[Trans]
+trans Loss: 1.226
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[82/1000] loss1.029 = 0.854+0.175-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11981773, 0.09405965]), 'recall': array([0.19154   , 0.28554026]), 'ndcg': array([0.18831004, 0.2131457 ]), 'mrr': array([0.32059981, 0.32904295])}
+VALID_SCORE 0.2855
+find a better model
+[Trans]
+trans Loss: 1.249
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[83/1000] loss1.026 = 0.853+0.173-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11988401, 0.0941425 ]), 'recall': array([0.19192849, 0.28543016]), 'ndcg': array([0.18857515, 0.2132719 ]), 'mrr': array([0.32095402, 0.32957457])}
+VALID_SCORE 0.2854
+[Trans]
+trans Loss: 1.212
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[84/1000] loss1.025 = 0.852+0.173-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11968517, 0.09400994]), 'recall': array([0.19193369, 0.28519965]), 'ndcg': array([0.18824139, 0.21294054]), 'mrr': array([0.32106916, 0.32954049])}
+VALID_SCORE 0.2852
+[Trans]
+trans Loss: 1.192
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[85/1000] loss1.023 = 0.851+0.172-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11993372, 0.09400994]), 'recall': array([0.19219789, 0.28455661]), 'ndcg': array([0.18856653, 0.21296844]), 'mrr': array([0.320754 , 0.3291137])}
+VALID_SCORE 0.2846
+[Trans]
+trans Loss: 1.231
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[86/1000] loss1.024 = 0.852+0.173-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11980116, 0.0939768 ]), 'recall': array([0.19196978, 0.2847774 ]), 'ndcg': array([0.18828219, 0.21287677]), 'mrr': array([0.32016892, 0.32856872])}
+VALID_SCORE 0.2848
+[Trans]
+trans Loss: 1.252
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[87/1000] loss1.023 = 0.852+0.172-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11935377, 0.09401823]), 'recall': array([0.1913118 , 0.28484572]), 'ndcg': array([0.18789464, 0.21287066]), 'mrr': array([0.32023165, 0.32876362])}
+VALID_SCORE 0.2848
+[Trans]
+trans Loss: 1.288
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[88/1000] loss1.019 = 0.848+0.171-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11953604, 0.09407622]), 'recall': array([0.1913514 , 0.28508526]), 'ndcg': array([0.18830057, 0.21326055]), 'mrr': array([0.32101649, 0.329661  ])}
+VALID_SCORE 0.2851
+[Trans]
+trans Loss: 1.326
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[89/1000] loss1.018 = 0.849+0.170-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11963546, 0.09393538]), 'recall': array([0.19192438, 0.28507595]), 'ndcg': array([0.188487 , 0.2131837]), 'mrr': array([0.32059146, 0.3291948 ])}
+VALID_SCORE 0.2851
+[Trans]
+trans Loss: 1.283
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[90/1000] loss1.016 = 0.848+0.169-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11955261, 0.09400994]), 'recall': array([0.19214862, 0.28482071]), 'ndcg': array([0.18841896, 0.21310934]), 'mrr': array([0.32053649, 0.32903812])}
+VALID_SCORE 0.2848
+[Trans]
+trans Loss: 1.320
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[91/1000] loss1.017 = 0.849+0.168-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11955261, 0.09381939]), 'recall': array([0.19227653, 0.28450897]), 'ndcg': array([0.18855619, 0.21303237]), 'mrr': array([0.32117456, 0.32965723])}
+VALID_SCORE 0.2845
+[Trans]
+trans Loss: 1.397
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[92/1000] loss1.015 = 0.848+0.168-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11951947, 0.09400994]), 'recall': array([0.19178147, 0.28494364]), 'ndcg': array([0.1886048 , 0.21338387]), 'mrr': array([0.32147677, 0.33014143])}
+VALID_SCORE 0.2849
+[Trans]
+trans Loss: 1.466
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[93/1000] loss1.015 = 0.848+0.167-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11968517, 0.09399337]), 'recall': array([0.1922326 , 0.28529431]), 'ndcg': array([0.18872926, 0.21340285]), 'mrr': array([0.32135039, 0.32983136])}
+VALID_SCORE 0.2853
+[Trans]
+trans Loss: 1.424
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[94/1000] loss1.013 = 0.847+0.167-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11955261, 0.09387738]), 'recall': array([0.1917538 , 0.28473658]), 'ndcg': array([0.18864506, 0.21332555]), 'mrr': array([0.32179916, 0.33023592])}
+VALID_SCORE 0.2847
+[Trans]
+trans Loss: 1.363
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[95/1000] loss1.012 = 0.846+0.166-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11970174, 0.09401823]), 'recall': array([0.19204723, 0.28517393]), 'ndcg': array([0.18842252, 0.21313105]), 'mrr': array([0.32111887, 0.32945083])}
+VALID_SCORE 0.2852
+[Trans]
+trans Loss: 1.381
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[96/1000] loss1.012 = 0.846+0.166-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11956918, 0.09379453]), 'recall': array([0.19184121, 0.28456874]), 'ndcg': array([0.18835239, 0.21289661]), 'mrr': array([0.32093713, 0.32932359])}
+VALID_SCORE 0.2846
+[Trans]
+trans Loss: 1.377
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[97/1000] loss1.013 = 0.847+0.166-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11976802, 0.09390224]), 'recall': array([0.19177521, 0.28531699]), 'ndcg': array([0.18859287, 0.21326775]), 'mrr': array([0.32147052, 0.32991285])}
+VALID_SCORE 0.2853
+[Trans]
+trans Loss: 1.343
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[98/1000] loss1.010 = 0.845+0.165-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11990058, 0.09378625]), 'recall': array([0.19236145, 0.28473413]), 'ndcg': array([0.18885075, 0.21312449]), 'mrr': array([0.32188734, 0.3302396 ])}
+VALID_SCORE 0.2847
+[Trans]
+trans Loss: 1.559
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[99/1000] loss1.008 = 0.845+0.164-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11996686, 0.09392709]), 'recall': array([0.19245982, 0.28503862]), 'ndcg': array([0.18898184, 0.21335939]), 'mrr': array([0.32190634, 0.33024668])}
+VALID_SCORE 0.2850
+[Trans]
+trans Loss: 1.590
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[100/1000] loss1.007 = 0.843+0.164-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11975145, 0.09392709]), 'recall': array([0.19207557, 0.28475569]), 'ndcg': array([0.18863841, 0.21316408]), 'mrr': array([0.32166686, 0.32993602])}
+VALID_SCORE 0.2848
+[Trans]
+trans Loss: 1.574
+[Drop]
+[Joint Learning]
+/mnt/d/projects/RS-Survey/10_models/kgcl/code/official/code/contrast.py:203: RuntimeWarning: divide by zero encountered in power
+  d_inv = np.power(rowsum, -0.5).flatten()
+EPOCH[101/1000] loss1.008 = 0.844+0.164-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.1196686 , 0.09386081]), 'recall': array([0.19207582, 0.28446529]), 'ndcg': array([0.18860625, 0.2130396 ]), 'mrr': array([0.32136117, 0.3297448 ])}
+VALID_SCORE 0.2845
+[Trans]
+trans Loss: 1.465
+[Drop]
+[Joint Learning]
+EPOCH[102/1000] loss1.007 = 0.844+0.163-|
+[VALID]
+test_u_batch_size is too big for this dataset, try a small one 603
+{'precision': array([0.11956918, 0.09389395]), 'recall': array([0.19196255, 0.28419682]), 'ndcg': array([0.18853707, 0.21301053]), 'mrr': array([0.3215132 , 0.32985724])}
+VALID_SCORE 0.2842
+early stop triggerd at epoch 101
+BEST_VALID 0.285540
