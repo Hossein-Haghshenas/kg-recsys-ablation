@@ -1,5 +1,7 @@
 # kg-recsys-ablation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23660234.svg)](https://doi.org/10.5281/zenodo.23660234)
+
 Code, configurations and run results for **"When Does the Knowledge Graph Pay? A Controlled Re-Execution Study of Knowledge-Aware Recommendation"**.
 
 The study re-executes five knowledge-aware recommenders (KGAT, KGIN, KGCL, LightKG, CKE) and a knowledge-free reference (LightGCN) under one frozen protocol, and trains every model on several versions of the same knowledge graph:
@@ -171,6 +173,17 @@ Notes on the recorded runs:
   journal = {Journal of Computing and Security},
   year    = {2026},
   note    = {Repository: \url{https://github.com/Hossein-Haghshenas/kg-recsys-ablation}}
+}
+
+@software{haghshenas2026kgpay_artifact,
+  author    = {Haghshenas, Hossein and Zare Mehrjardi, Fatemeh and Ghaneai, Hossein and Sardari Zarchi, Mohsen},
+  title     = {{Hossein-Haghshenas/kg-recsys-ablation: Complete Reproducibility Package --- When Does the Knowledge Graph Pay?}},
+  month     = oct,
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {v1.0.0},
+  doi       = {10.5281/zenodo.23660234},
+  url       = {https://doi.org/10.5281/zenodo.23660234}
 }
 ```
 
