@@ -131,7 +131,7 @@ python 30_analysis/make_all.py          # writes exploratory tables and figures 
 
 ## Results
 
-`20_results/runs.csv` holds all 321 finished runs across Last.FM, Book-Crossing, and MovieLens-1M (107 runs per dataset: 80 core runs + 27 dose runs), one row per run: test Recall@10/20, NDCG@10/20, MRR@10, best and total epochs, training time, time per epoch, peak GPU memory, parameter count, best validation score and the configuration hash. Evaluation is full ranking over all items.
+`20_results/runs.csv` holds all 381 finished runs across Last.FM, Book-Crossing, and MovieLens-1M (300 core runs + 81 dose runs across five to ten seeds per cell, including the $n=10$ Book-Crossing stabilization expansion and `REL-SHUF` relation-permutation control runs), one row per run: test Recall@10/20, NDCG@10/20, MRR@10, best and total epochs, training time, time per epoch, peak GPU memory, parameter count, best validation score and the configuration hash. Evaluation is full ranking over all items.
 
 `30_analysis/paper_statistics.py` reproduces the manuscript's primary measurement tables:
 
@@ -159,7 +159,7 @@ In addition, `30_analysis/make_all.py` builds these exploratory summaries:
 
 Notes on the recorded runs:
 
-- **LightKG / Book-Crossing / `shuf`, seed 2** stalled on its initial loss plateau (loss 47.49 at epoch 25, best validation epoch 4, patience 20) and terminated via early stopping without error. In the manuscript's primary analysis (Tables 17 and 18, Section 8.1), this stalled seed is excluded, yielding $n=4$ trained runs with Recall@20 = $0.0861 \pm 0.0021$. When all five seeds are pooled, Recall@20 = $0.0713 \pm 0.0332$ ($n=5$). Both versions are documented in `30_analysis/tables/e3_full_shuf_none.note.txt` and evaluated in `paper_contrasts_pooled_sensitivity.csv`.
+- **LightKG / Book-Crossing / `shuf`, seed 2** stalled on its initial loss plateau (loss 47.49 at epoch 25, best validation epoch 4, patience 20) and terminated via early stopping without error. In the manuscript's primary analysis (Tables 17 and 18, Section 8.1), this stalled seed is excluded, yielding $n=9$ trained runs with Recall@20 = $0.0861 \pm 0.0024$. When all ten seeds are pooled, Recall@20 = $0.0787 \pm 0.0235$ ($n=10$). Both versions are documented in `30_analysis/tables/e3_full_shuf_none.note.txt` and evaluated in `paper_contrasts_pooled_sensitivity.csv`.
 - **MovieLens-1M** configurations, 165 search trials (across 11 search cells), and all 107 seed runs are fully executed and included in `runs.csv`.
 - The `commit` column records the revision of the LightKG code used for a run. `8c8cc70` is the revision included in this repository.
 - File paths inside the logs and JSON records are relative to the repository root.

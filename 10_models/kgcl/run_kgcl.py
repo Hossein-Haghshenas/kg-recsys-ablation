@@ -217,6 +217,8 @@ def _run(args: argparse.Namespace) -> int:
     import yaml
 
     cfg_path = args.config or (ROOT / "10_models" / "kgcl" / "configs" / f"{args.dataset}__{args.condition}.yaml")
+    if not cfg_path.exists() and args.condition == "relshuf":
+        cfg_path = ROOT / "10_models" / "kgcl" / "configs" / f"{args.dataset}__full.yaml"
     if not cfg_path.exists():
         raise FileNotFoundError(
             f"missing config {cfg_path}; silent fallback is forbidden"

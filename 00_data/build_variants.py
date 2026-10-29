@@ -65,6 +65,22 @@ def _shuffle(rows: list[dict[str, str]], seed: int) -> list[dict[str, str]]:
     return out
 
 
+def _relation_shuffle(rows: list[dict[str, str]], seed: int) -> list[dict[str, str]]:
+    rng = random.Random(seed)
+    rels = [row["relation_id:token"] for row in rows]
+    rng.shuffle(rels)
+    out = []
+    for row, rel in zip(rows, rels):
+        out.append(
+            {
+                "head_id:token": row["head_id:token"],
+                "relation_id:token": rel,
+                "tail_id:token": row["tail_id:token"],
+            }
+        )
+    return out
+
+
 def _linked_entities(link_path: Path) -> set[str]:
     if not link_path.exists():
         return set()
@@ -122,21 +138,33 @@ def build_one(processed: Path, variants: Path, dataset: str) -> None:
     dest = variants / dataset
     _write_triples(dest / "none.txt", [])
     _write_triples(dest / "full.txt", rows)
-    for seed in SHUF_SEEDS:
-        _write_triples(dest / f"shuf_s{seed}.txt", _shuffle(rows, seed))
+    shuf_seeds = range(10) if dataset == "bookcrossing" else range(5)
+    for seed in shuf_seeds:
+        shuf_file = dest / f"shuf_s{seed}.txt"
+        if not shuf_file.exists():
+            _write_triples(shuf_file, _shuffle(rows, seed))
+            print(f"  {dataset} shuf_s{seed}: generated")
+    if dataset == "bookcrossing":
+        for seed in range(5):
+            rel_file = dest / f"relshuf_s{seed}.txt"
+            if not rel_file.exists():
+                _write_triples(rel_file, _relation_shuffle(rows, seed))
+                print(f"  {dataset} relshuf_s{seed}: generated")
     for ratio in DOSE_RATIOS:
         for seed in SHUF_SEEDS:
-            sampled = _dose(rows, ratio, seed * 100 + ratio, linked)
-            missing = _dose_covers_links(sampled, linked)
-            if missing:
-                raise RuntimeError(
-                    f"{dataset} dose{ratio}_s{seed} dropped {len(missing)} linked entities"
+            dose_file = dest / f"dose{ratio}_s{seed}.txt"
+            if not dose_file.exists():
+                sampled = _dose(rows, ratio, seed * 100 + ratio, linked)
+                missing = _dose_covers_links(sampled, linked)
+                if missing:
+                    raise RuntimeError(
+                        f"{dataset} dose{ratio}_s{seed} dropped {len(missing)} linked entities"
+                    )
+                _write_triples(dose_file, sampled)
+                print(
+                    f"  {dataset} dose{ratio}_s{seed}: {len(sampled)} triples "
+                    f"(target {int(len(rows) * ratio / 100)}, linked {len(linked)})"
                 )
-            _write_triples(dest / f"dose{ratio}_s{seed}.txt", sampled)
-            print(
-                f"  {dataset} dose{ratio}_s{seed}: {len(sampled)} triples "
-                f"(target {int(len(rows) * ratio / 100)}, linked {len(linked)})"
-            )
     print(f"wrote variants for {dataset}: {len(rows)} triples")
 
 

@@ -68,11 +68,18 @@ def convert(dataset: str, condition: str, seed: int) -> Path:
             grouped[user_map[user]].append(item_map[item])
         _write_user_items(dest / f"{split}.txt", grouped)
 
-    variant_name = "full.txt" if condition == "full" else (
-        "none.txt" if condition == "none" else (
-            f"shuf_s{seed % 3}.txt" if condition == "shuf" else f"{condition}_s{seed % 3}.txt"
-        )
-    )
+    if condition == "full":
+        variant_name = "full.txt"
+    elif condition == "none":
+        variant_name = "none.txt"
+    elif condition == "shuf":
+        target = ROOT / "00_data" / "kg_variants" / dataset / f"shuf_s{seed}.txt"
+        variant_name = f"shuf_s{seed}.txt" if target.exists() else f"shuf_s{seed % 3}.txt"
+    elif condition == "relshuf":
+        target = ROOT / "00_data" / "kg_variants" / dataset / f"relshuf_s{seed}.txt"
+        variant_name = f"relshuf_s{seed}.txt" if target.exists() else f"relshuf_s{seed % 5}.txt"
+    else:
+        variant_name = f"{condition}_s{seed % 3}.txt" 
     kg_rows = _rows(ROOT / "00_data" / "kg_variants" / dataset / variant_name)
     # kg files use RecBole entity ids; official KGCL TransE looks heads up as items
     link_path = processed / f"{stem}.link"

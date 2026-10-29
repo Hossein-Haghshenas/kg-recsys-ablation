@@ -107,14 +107,25 @@ def _git_commit(path: Path) -> str:
         return "unknown"
 
 
-def _variant_name(condition: str, seed: int) -> str:
+def _variant_name(dataset: str, condition: str, seed: int) -> str:
     if condition == "full":
         return "full.txt"
     if condition == "none":
         return "none.txt"
     if condition == "shuf":
+        target = ROOT / "00_data" / "kg_variants" / dataset / f"shuf_s{seed}.txt"
+        if target.exists():
+            return f"shuf_s{seed}.txt"
         return f"shuf_s{seed % 3}.txt"
+    if condition == "relshuf":
+        target = ROOT / "00_data" / "kg_variants" / dataset / f"relshuf_s{seed}.txt"
+        if target.exists():
+            return f"relshuf_s{seed}.txt"
+        return f"relshuf_s{seed % 5}.txt"
     if condition.startswith("dose"):
+        target = ROOT / "00_data" / "kg_variants" / dataset / f"{condition}_s{seed}.txt"
+        if target.exists():
+            return f"{condition}_s{seed}.txt"
         return f"{condition}_s{seed % 3}.txt"
     raise ValueError(f"unknown condition: {condition}")
 
@@ -147,7 +158,7 @@ def _prepare_dataset(dataset: str, condition: str, seed: int) -> tuple[Path, str
     shutil.copytree(src, work)
     note = ""
     if dataset != "lightgcn_skip":
-        variant = ROOT / "00_data" / "kg_variants" / dataset / _variant_name(condition, seed)
+        variant = ROOT / "00_data" / "kg_variants" / dataset / _variant_name(dataset, condition, seed)
         dest_kg = work / f"{stem}.kg"
         if condition == "none":
             note = _write_dummy_kg(dest_kg, src / f"{stem}.kg", src / f"{stem}.link")
@@ -168,6 +179,11 @@ def resolve_config_path(
             raise FileNotFoundError(f"missing --config {path}")
         return path
     path = ROOT / "10_models" / model / "configs" / f"{dataset}__{condition}.yaml"
+    if not path.exists() and condition == "relshuf":
+        fallback_shuf = ROOT / "10_models" / model / "configs" / f"{dataset}__shuf.yaml"
+        if fallback_shuf.exists():
+            return fallback_shuf
+        return ROOT / "10_models" / model / "configs" / f"{dataset}__full.yaml"
     if not path.exists():
         raise FileNotFoundError(
             f"missing config {path}; silent fallback to another dataset or "
