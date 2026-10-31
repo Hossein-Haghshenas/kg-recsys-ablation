@@ -9,8 +9,8 @@ Tables reproduced (numbering of the manuscript):
   ourneg       negative-sampling spread   -> tables/paper_nneg.csv
 
 Conventions (Section 8.1 of the paper):
-  * two reproducible stalls under the pre-specified objective stall rule
-    (best_epoch <= 5 and Recall@20 < 0.02: LightKG / Book-Crossing / SHUF / seed 2
+  * two reproducible stalls under the author-approved validation-based stall rule
+    (best_epoch <= 5 and best_valid_score < 0.02: LightKG / Book-Crossing / SHUF / seed 2
     and LightKG / Book-Crossing / NONE / seed 9, where early stopping ended the
     runs on their starting loss plateau) are excluded from the primary analysis
     and reported in pooled sensitivity;
@@ -52,8 +52,8 @@ KG_MODELS = ["kgat", "kgin", "kgcl", "lightkg", "cke"]
 CONTRASTS = [("presence", "full", "none"), ("structure", "shuf", "none"), ("content", "full", "shuf")]
 DOSE_LEVELS = [("none", 0), ("dose25", 25), ("dose50", 50), ("dose75", 75), ("full", 100)]
 DOSE_MODELS = ["kgat", "kgin", "lightkg"]
-# Pre-specified objective stall criterion (Section 8.1 / Table 17 footnote):
-# early stopping on the initial loss plateau (best_epoch <= 5, recall@20 < 0.02),
+# Author-approved validation-based stall criterion (Section 8.1 / Table 17 footnote):
+# early stopping on the initial loss plateau (best_epoch <= 5, best_valid_score < 0.02),
 # capturing reproducible early stalls: ("lightkg", "bookcrossing", "shuf", 2)
 # and ("lightkg", "bookcrossing", "none", 9).
 STALLED = {
@@ -71,9 +71,12 @@ def load_runs() -> pd.DataFrame:
         (m, ds, c, int(s)) in STALLED
         for m, ds, c, s in zip(d["model"], d["dataset"], d["condition"], d["seed"])
     ]
-    # Assert exact equivalence with pre-specified objective stall criterion
-    stall_criterion = (d["best_epoch"] <= 5) & (d["recall@20"] < 0.02)
-    assert (d["stalled"] == stall_criterion).all(), "STALLED must match objective criterion exactly"
+    # Assert exact equivalence with author-approved validation-based stall criterion
+    stall_criterion = (
+        (d["best_epoch"] <= 5) &
+        (d["best_valid_score"] < 0.02)
+    )
+    assert (d["stalled"] == stall_criterion).all(), "STALLED must match validation-based criterion exactly"
     return d
 
 
